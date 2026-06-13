@@ -2,9 +2,24 @@
 const translations = {
     ko: {
         title: "내 소득은 몇 등??", subtitle: "전 세계와 내 나라에서 나의 위치를 확인하세요.", labelCountry: "국가", labelOccupation: "직종", labelGender: "성별", labelIncomeType: "급여 기준", labelAmount: "금액", btnSubmit: "내 등수 확인하기", adTitle: "글로벌 포털 데이터를 딥서치 분석 중입니다...", countdownText: "결과 확인까지", resultTitle: "소득 랭킹 결과", resLocalJob: "동일 직종 (국내)", resGlobalJob: "동일 직종 (세계)", resLocalAll: "전체 직종 (국내)", resGlobalAll: "전체 직종 (세계)", btnRecalculate: "다시 계산하기", prefixTop: "상위 ", suffixPercent: "%",
-        analysisTop: "상위 {rank}%! 정말 대단합니다. [{category}] 약 {total}명 중 당신의 등수는 대략 {rankNum}등 입니다. 당신의 노력과 실력이 최상위권임을 증명하네요. 최고입니다!",
-        analysisMiddle: "상위 {rank}%. 안정적인 위치에 계시네요. [{category}] 약 {total}명 중 대략 {rankNum}등 입니다. 꾸준히 나아가면 더 높은 곳도 충분히 가능합니다. 훌륭합니다!",
-        analysisBottom: "상위 {rank}%. 현재 위치도 나쁘지 않습니다! [{category}] 약 {total}명 중 대략 {rankNum}등 입니다. 조금만 더 노력하면 훨씬 더 큰 도약이 있을 거예요. 응원합니다!"
+        analysisTop: [
+            "🎉 경이로운 수치입니다! [{category}] 약 {total}명 중 {rankNum}등으로, 상위 {rank}%에 오르셨습니다. 당신의 압도적인 능력이 빛을 발하고 있네요. 뜨거운 박수를 보냅니다!",
+            "🌟 세계가 주목할 만한 성과입니다! [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 글로벌 무대에서도 당신의 가치는 최상위권입니다. 정말 자랑스럽습니다!",
+            "🔥 대한민국 상위 {rank}%! [{category}] 약 {total}명 중 {rankNum}등입니다. 수많은 사람들 중에서도 단연 돋보이는 눈부신 성취입니다. 최고입니다!",
+            "👑 상위 {rank}%의 월드클래스! [{category}] 약 {total}명 중 {rankNum}등에 위치하고 계십니다. 당신의 땀과 노력이 만든 위대한 결과에 진심 어린 찬사를 보냅니다!"
+        ],
+        analysisMiddle: [
+            "💡 안정적이고 탄탄한 위치입니다! [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)에 계시네요. 지금까지의 노력이 멋진 기반을 만들었습니다. 앞으로의 도약이 기대됩니다!",
+            "🌍 글로벌 상위 {rank}%! [{category}] 약 {total}명 중 {rankNum}등입니다. 전 세계를 기준으로도 평균 이상의 훌륭한 위치에 있습니다. 계속 힘차게 나아가세요!",
+            "🌱 상위 {rank}%. 굳건히 자리를 지키고 계십니다! [{category}] 약 {total}명 중 {rankNum}등입니다. 조금씩 더 나아간다면 충분히 더 높은 곳에 닿을 수 있습니다. 파이팅!",
+            "🚀 전 세계 상위 {rank}%! [{category}] 약 {total}명 중 {rankNum}등입니다. 이미 세계 무대에서 절반 이상을 앞서가고 있습니다. 당신의 잠재력은 아직 무궁무진합니다!"
+        ],
+        analysisBottom: [
+            "💪 당신의 진정한 가치는 숫자로 다 담을 수 없습니다! [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 지금은 더 높이 뛰기 위해 숨을 고르는 시기일 뿐, 절대 기죽지 마세요!",
+            "🌈 세계는 넓고 기회는 끝이 없습니다. [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)이지만, 이는 크게 도약하기 위한 단단한 발판이 될 것입니다. 당신의 밝은 미래를 진심으로 응원합니다!",
+            "✨ 위대한 성공은 모두 작은 발걸음에서 시작됩니다. [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 남들과 비교하기보다 어제보다 나아진 자신을 믿으세요. 위안과 따뜻한 격려를 보냅니다!",
+            "🌻 상위 {rank}%. [{category}] 약 {total}명 중 {rankNum}등입니다. 지금 당장은 아쉬울 수 있어도, 당신이 품은 가능성은 무한합니다. 묵묵히 이겨내는 당신은 이미 충분히 멋진 사람입니다!"
+        ]
     },
     en: {
         title: "My Income Rank?", subtitle: "Discover where you stand globally and locally.", labelCountry: "Country", labelOccupation: "Occupation", labelGender: "Gender", labelIncomeType: "Income Type", labelAmount: "Amount", btnSubmit: "Check My Rank", adTitle: "Deep searching global portals...", countdownText: "Results in", resultTitle: "Your Ranking Results", resLocalJob: "Same Job (Local)", resGlobalJob: "Same Job (Global)", resLocalAll: "All Jobs (Local)", resGlobalAll: "All Jobs (Global)", btnRecalculate: "Recalculate", prefixTop: "Top ", suffixPercent: "%",
@@ -639,18 +654,61 @@ function showResults() {
     const localAll = Math.max(0.01, (baseRank)).toFixed(2);
     const globalAll = Math.max(0.01, (baseRank * 0.5)).toFixed(2);
     
-    el('val-local-job').innerText = parseFloat(localJob);
-    el('val-global-job').innerText = parseFloat(globalJob);
-    el('val-local-all').innerText = parseFloat(localAll);
-    el('val-global-all').innerText = parseFloat(globalAll);
+    el('val-local-job').dataset.target = localJob;
+    el('val-global-job').dataset.target = globalJob;
+    el('val-local-all').dataset.target = localAll;
+    el('val-global-all').dataset.target = globalAll;
     
-    // Animate bars (Height = 100% means top 0%. Height = 0% means bottom 100%)
+    // Animate bars and countdown numbers
     setTimeout(() => {
-        el('bar-local-job').style.height = (100 - parseFloat(localJob)) + '%';
-        el('bar-global-job').style.height = (100 - parseFloat(globalJob)) + '%';
-        el('bar-local-all').style.height = (100 - parseFloat(localAll)) + '%';
-        el('bar-global-all').style.height = (100 - parseFloat(globalAll)) + '%';
+        animateChart('bar-local-job', 'val-local-job', 'label-local-job', localJob);
+        animateChart('bar-global-job', 'val-global-job', 'label-global-job', globalJob);
+        animateChart('bar-local-all', 'val-local-all', 'label-local-all', localAll);
+        animateChart('bar-global-all', 'val-global-all', 'label-global-all', globalAll);
     }, 100);
+    
+    updateAnalysisTexts(el('language').value);
+}
+
+function animateChart(barId, valId, labelId, targetPercent) {
+    const barEl = el(barId);
+    const valEl = el(valId);
+    const labelEl = el(labelId);
+    
+    if (labelEl) labelEl.classList.add('active');
+    
+    const duration = 1500; // 1.5 seconds
+    const startNum = 100;
+    const endNum = parseFloat(targetPercent);
+    // Scale max height to 85% so the label never crosses the top line
+    const targetHeight = (100 - endNum) * 0.85;
+    
+    const startTime = performance.now();
+    
+    function step(currentTime) {
+        let elapsed = currentTime - startTime;
+        let progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (cubic-bezier out)
+        let easeProgress = 1 - Math.pow(1 - progress, 3);
+        
+        let currentNum = startNum - ((startNum - endNum) * easeProgress);
+        let currentHeight = targetHeight * easeProgress;
+        
+        if (valEl) valEl.innerText = currentNum.toFixed(2);
+        if (barEl) barEl.style.height = currentHeight + '%';
+        if (labelEl) labelEl.style.bottom = currentHeight + '%';
+        
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            if (valEl) valEl.innerText = endNum.toFixed(2);
+            if (barEl) barEl.style.height = targetHeight + '%';
+            if (labelEl) labelEl.style.bottom = targetHeight + '%';
+        }
+    }
+    
+    requestAnimationFrame(step);
     
     updateAnalysisTexts(el('language').value);
 }
@@ -677,23 +735,38 @@ function updateAnalysisTexts(lang) {
     const jobKey = el('occupation-small').value;
     const jobRatio = getJobPrevalenceRatio(jobKey);
 
+    const jobSelect = el('occupation-small');
+    const jobNameRaw = jobSelect.options[jobSelect.selectedIndex].text;
+    const jobName = jobNameRaw.split(' (')[0]; 
+    
+    const isKo = lang === 'ko';
+    const localSuffix = isKo ? '(국내)' : '(Local)';
+    const globalSuffix = isKo ? '(세계)' : '(Global)';
+    const allJobsTxt = isKo ? '모든직종' : 'All Jobs';
+    
+    const catLocalJob = `${jobName} ${localSuffix}`;
+    const catGlobalJob = `${jobName} ${globalSuffix}`;
+    const catLocalAll = `${allJobsTxt} ${localSuffix}`;
+    const catGlobalAll = `${allJobsTxt} ${globalSuffix}`;
+
     const localJobTotal = Math.floor(localPop * jobRatio);
     const globalJobTotal = Math.floor(globalPop * jobRatio);
     const localAllTotal = localPop;
     const globalAllTotal = globalPop;
     
-    const applyAnalysis = (valId, analysisId, totalPop, categoryName) => {
-        const rankStr = el(valId).innerText;
+    const applyAnalysis = (valId, analysisId, titleId, totalPop, categoryName, index) => {
+        const valEl = el(valId);
+        const rankStr = valEl.dataset.target || valEl.innerText;
         if (!rankStr) return;
         const rank = parseFloat(rankStr);
         let textTemplate = "";
         
         if (rank <= 20) {
-            textTemplate = t.analysisTop;
+            textTemplate = Array.isArray(t.analysisTop) ? t.analysisTop[index] : t.analysisTop;
         } else if (rank <= 60) {
-            textTemplate = t.analysisMiddle;
+            textTemplate = Array.isArray(t.analysisMiddle) ? t.analysisMiddle[index] : t.analysisMiddle;
         } else {
-            textTemplate = t.analysisBottom;
+            textTemplate = Array.isArray(t.analysisBottom) ? t.analysisBottom[index] : t.analysisBottom;
         }
         
         let rankNum = Math.floor(totalPop * (rank / 100));
@@ -708,20 +781,23 @@ function updateAnalysisTexts(lang) {
         
         // Add some glowing effect or color variations based on rank
         if (rank <= 20) {
-            finalHtml = `<span class="text-gold" style="font-size:1.1rem; text-shadow: 0 0 5px rgba(255,215,0,0.5);">✨ </span>` + finalHtml;
+            finalHtml = `<span class="text-gold" style="font-size:1.1rem; text-shadow: 0 0 5px rgba(255,215,0,0.5);"></span>` + finalHtml;
         } else if (rank <= 60) {
-            finalHtml = `<span class="text-blue">👍 </span>` + finalHtml;
+            finalHtml = `<span class="text-blue"></span>` + finalHtml;
         } else {
-            finalHtml = `<span style="color:#aaa;">💪 </span>` + finalHtml;
+            finalHtml = `<span style="color:#aaa;"></span>` + finalHtml;
         }
         
         el(analysisId).innerHTML = finalHtml;
+        if(el(titleId)) {
+            el(titleId).innerText = categoryName;
+        }
     };
 
-    applyAnalysis('val-local-job', 'analysis-local-job', localJobTotal, t.resLocalJob);
-    applyAnalysis('val-global-job', 'analysis-global-job', globalJobTotal, t.resGlobalJob);
-    applyAnalysis('val-local-all', 'analysis-local-all', localAllTotal, t.resLocalAll);
-    applyAnalysis('val-global-all', 'analysis-global-all', globalAllTotal, t.resGlobalAll);
+    applyAnalysis('val-local-job', 'analysis-local-job', 'title-local-job', localJobTotal, catLocalJob, 0);
+    applyAnalysis('val-global-job', 'analysis-global-job', 'title-global-job', globalJobTotal, catGlobalJob, 1);
+    applyAnalysis('val-local-all', 'analysis-local-all', 'title-local-all', localAllTotal, catLocalAll, 2);
+    applyAnalysis('val-global-all', 'analysis-global-all', 'title-global-all', globalAllTotal, catGlobalAll, 3);
 }
 
 // Reset Form
@@ -734,11 +810,15 @@ function resetForm() {
     
     el('amount').value = '';
     
-    // Reset bar heights
-    el('bar-local-job').style.height = '0%';
-    el('bar-global-job').style.height = '0%';
-    el('bar-local-all').style.height = '0%';
-    el('bar-global-all').style.height = '0%';
+    // Reset bar heights and labels
+    ['local-job', 'global-job', 'local-all', 'global-all'].forEach(key => {
+        el(`bar-${key}`).style.height = '0%';
+        el(`val-${key}`).innerText = '100';
+        if (el(`label-${key}`)) {
+            el(`label-${key}`).classList.remove('active');
+            el(`label-${key}`).style.bottom = '0%';
+        }
+    });
 }
 
 el('country').addEventListener('change', updateCurrencyLabel);

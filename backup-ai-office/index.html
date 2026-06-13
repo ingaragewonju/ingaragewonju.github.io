@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 가상 건설 오피스 V2 - App Dev HQ</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google AdSense Verification -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8659205422441932" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-layer-group brand-icon"></i>
+                <div class="brand-text">
+                    <h2>AI OFFICE V2</h2>
+                    <span style="font-size: 0.75rem; color: var(--text-secondary);">APP DEV LAB</span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <a class="nav-item active" id="nav-dashboard" onclick="switchView('dashboard')">
+                    <i class="fa-solid fa-house"></i> 메인 대시보드
+                </a>
+                <a class="nav-item" id="nav-team" onclick="switchView('team')">
+                    <i class="fa-solid fa-users"></i> 앱 개발팀 조직도
+                </a>
+                <a class="nav-item" id="nav-calc" onclick="switchView('calc')">
+                    <i class="fa-solid fa-mobile-screen-button"></i> 글로벌 페이 랭커 (Live)
+                </a>
+                <a class="nav-item" id="nav-telegram" onclick="switchView('telegram')">
+                    <i class="fa-brands fa-telegram"></i> 텔레그램 연동
+                </a>
+            </nav>
+            
+            <div class="glass-panel" style="padding: 1rem; text-align: center; margin-top: auto;">
+                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">시스템 상태</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <div style="width: 8px; height: 8px; background: var(--accent-green); border-radius: 50%; box-shadow: 0 0 10px var(--accent-green);"></div>
+                    <span style="font-size: 0.9rem; font-weight: 600;">V2 엔진 가동 중</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <header class="header">
+                <div class="header-titles">
+                    <h1 id="page-title">앱 개발본부 대시보드</h1>
+                    <p id="page-subtitle">대표님과 6인의 최정예 앱 개발 부서원들이 상주하는 공간입니다.</p>
+                </div>
+                
+                <div class="user-profile" style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="text-align: right;">
+                        <div style="font-weight: 700;">대표님 (CEO)</div>
+                        <div style="font-size: 0.8rem; color: var(--accent-blue);">최고 관리자</div>
+                    </div>
+                    <div style="width: 45px; height: 45px; background: linear-gradient(45deg, var(--accent-blue), var(--accent-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                        👑
+                    </div>
+                </div>
+            </header>
+            
+            <!-- VIEW 1: Dashboard -->
+            <section id="view-dashboard" class="view-section active">
+                
+                <!-- Command Box -->
+                <div class="glass-panel command-center">
+                    <h3 class="section-title"><i class="fa-solid fa-terminal"></i> 대표님 전용 지시 센터</h3>
+                    <div class="cmd-input-wrapper">
+                        <input type="text" id="cmd-input" placeholder="예: 코다리 부장, 오늘 개발 진척도 보고해!" autocomplete="off">
+                        <button class="btn-primary" onclick="sendCommand()">지시 전송 <i class="fa-solid fa-paper-plane" style="margin-left: 5px;"></i></button>
+                    </div>
+                    <div style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">추천 지시:</span>
+                        <button class="glass-panel" style="padding: 0.3rem 0.8rem; font-size: 0.85rem; cursor: pointer;" onclick="document.getElementById('cmd-input').value='서대리, 계산기 UI 수정건 어떻게 됐어?'; sendCommand();">UI 진척도 묻기</button>
+                        <button class="glass-panel" style="padding: 0.3rem 0.8rem; font-size: 0.85rem; cursor: pointer;" onclick="document.getElementById('cmd-input').value='표과장, 최근 글로벌 소득 트렌드 분석 브리핑해줘.'; sendCommand();">트렌드 브리핑</button>
+                    </div>
+                </div>
+                
+                <div class="grid-2">
+                    <!-- Live Feed -->
+                    <div class="glass-panel live-feed-card">
+                        <div class="feed-header">
+                            <h3 class="section-title" style="margin: 0;"><i class="fa-solid fa-bolt"></i> 실시간 업무 로그</h3>
+                            <span style="color: var(--accent-pink); font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 5px;">
+                                <i class="fa-solid fa-circle" style="font-size: 0.5rem; animation: pulse 1s infinite;"></i> LIVE
+                            </span>
+                        </div>
+                        <div class="feed-content" id="live-feed">
+                            <!-- Logs generated by JS -->
+                            <div class="log-entry">
+                                <img src="assets/kodari_avatar.png" class="log-avatar" alt="코다리">
+                                <div class="log-body">
+                                    <div class="log-name">코다리 부장</div>
+                                    <div class="log-text">대표님, V2 가상 오피스 구축이 성공적으로 완료되었습니다! 앱 개발팀 전원 스탠바이 중입니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="glass-panel" style="padding: 1.5rem;">
+                            <h3 class="section-title"><i class="fa-solid fa-chart-pie"></i> 앱 런칭 프로젝트 현황</h3>
+                            <div style="margin-top: 1rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>글로벌 페이 랭커 개발</span>
+                                    <span style="color: var(--accent-blue); font-weight: 700;">100%</span>
+                                </div>
+                                <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 100%; height: 100%; background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-panel" style="padding: 1.5rem; flex-grow: 1; background: linear-gradient(135deg, rgba(20,20,30,0.8), rgba(157,78,221,0.2));">
+                            <h3 style="margin-bottom: 1rem; color: white;">🚀 Next Step</h3>
+                            <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                                현재 모바일 앱 개발이 완료되었습니다.<br>
+                                왼쪽 메뉴의 <strong>'글로벌 페이 랭커 (Live)'</strong> 탭을 클릭하여 중앙 화면에서 앱을 직접 테스트해보세요.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- VIEW 2: Team -->
+            <section id="view-team" class="view-section">
+                <div class="glass-panel">
+                    <div style="padding: 1.5rem; border-bottom: 1px solid var(--glass-border);">
+                        <h3 class="section-title" style="margin: 0;"><i class="fa-solid fa-sitemap"></i> 앱 개발 본부 조직도</h3>
+                    </div>
+                    
+                    <div class="team-grid">
+                        <!-- Kodari -->
+                        <div class="glass-panel team-card role-pm">
+                            <img src="assets/kodari_avatar.png" class="team-avatar" alt="코다리 부장">
+                            <h4 class="team-name">코다리 부장</h4>
+                            <span class="team-role">비서실 & IT개발총괄</span>
+                        </div>
+                        
+                        <!-- Seo -->
+                        <div class="glass-panel team-card role-dev">
+                            <img src="assets/dev_seo_avatar.png" class="team-avatar" alt="서대리">
+                            <h4 class="team-name">서대리</h4>
+                            <span class="team-role">프론트엔드 (UI)</span>
+                        </div>
+                        
+                        <!-- Kang -->
+                        <div class="glass-panel team-card role-data">
+                            <img src="assets/dev_kang_avatar.png" class="team-avatar" alt="강대리">
+                            <h4 class="team-name">강대리</h4>
+                            <span class="team-role">백엔드 & 통계 분석</span>
+                        </div>
+                        
+                        <!-- Pyo -->
+                        <div class="glass-panel team-card role-data" style="border-color: #ffb300;">
+                            <img src="assets/trend_analyst_avatar.png" class="team-avatar" alt="표과장">
+                            <h4 class="team-name">표설희 과장</h4>
+                            <span class="team-role">글로벌 트렌드 리서치</span>
+                        </div>
+                        
+                        <!-- Jang -->
+                        <div class="glass-panel team-card role-dev" style="border-color: #ff3d00;">
+                            <img src="assets/dev_jang_avatar.png" class="team-avatar" alt="장수석">
+                            <h4 class="team-name">장수석</h4>
+                            <span class="team-role">모바일 패키징/DevOps</span>
+                        </div>
+                        
+                        <!-- Yoon -->
+                        <div class="glass-panel team-card role-pm" style="border-color: #e040fb;">
+                            <img src="assets/designer_yoon_avatar.png" class="team-avatar" alt="윤팀장">
+                            <h4 class="team-name">윤설아 팀장</h4>
+                            <span class="team-role">UI/UX 디자인 총괄</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- VIEW 3: Calculator App Iframe -->
+            <section id="view-calc" class="view-section">
+                <div class="calc-iframe-container">
+                    <!-- Embed the mobile app directory index -->
+                    <iframe src="calculator-mobile/index.html" title="글로벌 페이 랭커 모바일 뷰"></iframe>
+                </div>
+            </section>
+            
+            <!-- VIEW 4: Telegram -->
+            <section id="view-telegram" class="view-section">
+                <div class="glass-panel telegram-view">
+                    <h3 class="section-title"><i class="fa-brands fa-telegram"></i> 텔레그램 스마트 연동</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">대표님의 스마트폰과 가상 오피스를 실시간 연동합니다.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--accent-blue);">Bot Token</label>
+                            <input type="password" class="glass-panel" style="width: 100%; padding: 1rem; border-color: rgba(255,255,255,0.2); color: white;" placeholder="BotFather가 발급한 토큰 입력">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--accent-blue);">Chat ID</label>
+                            <input type="text" class="glass-panel" style="width: 100%; padding: 1rem; border-color: rgba(255,255,255,0.2); color: white;" placeholder="알림을 받을 채팅방 ID 입력">
+                        </div>
+                        <button class="btn-primary" style="padding: 1rem; margin-top: 1rem;">연동 저장 및 테스트 발송</button>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "appId": "com.aiconstruction.incomecalc",
+  "appName": "GlobalIncomePercentileCalculator",
+  "webDir": ".",
+  "server": {
+    "androidScheme": "https"
+  }
+}

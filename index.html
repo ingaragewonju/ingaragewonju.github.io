@@ -10,7 +10,7 @@
     <meta property="og:title" content="소득랭킹계산기 | 내 소득은 몇 등??">
     <meta property="og:description" content="전 세계 10개국 언어 지원. 내 직종에서 나의 소득이 상위 몇 %인지 지금 바로 확인하세요!">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css?v=11">
+    <link rel="stylesheet" href="styles.css?v=16">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Wealth Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -120,13 +120,13 @@
                     <!-- Local Job -->
                     <div class="result-item">
                         <div class="chart-col">
-                            <h3 id="res-local-job">동일 직종 (국내)</h3>
-                            <div class="rank-label"><span class="prefix-top">상위 </span><span id="val-local-job">0</span><span class="suffix-percent">%</span></div>
                             <div class="bar-wrapper">
                                 <div class="bar" id="bar-local-job"></div>
+                                <div class="dynamic-percent-label" id="label-local-job"><span class="prefix-top">상위 </span><span id="val-local-job">100</span><span class="suffix-percent">%</span></div>
                             </div>
                         </div>
                         <div class="analysis-col">
+                            <h3 id="title-local-job" class="analysis-title"></h3>
                             <p id="analysis-local-job" class="analysis-text"></p>
                         </div>
                     </div>
@@ -134,13 +134,13 @@
                     <!-- Global Job -->
                     <div class="result-item">
                         <div class="chart-col">
-                            <h3 id="res-global-job">동일 직종 (세계)</h3>
-                            <div class="rank-label"><span class="prefix-top">상위 </span><span id="val-global-job">0</span><span class="suffix-percent">%</span></div>
                             <div class="bar-wrapper">
                                 <div class="bar" id="bar-global-job"></div>
+                                <div class="dynamic-percent-label" id="label-global-job"><span class="prefix-top">상위 </span><span id="val-global-job">100</span><span class="suffix-percent">%</span></div>
                             </div>
                         </div>
                         <div class="analysis-col">
+                            <h3 id="title-global-job" class="analysis-title"></h3>
                             <p id="analysis-global-job" class="analysis-text"></p>
                         </div>
                     </div>
@@ -148,13 +148,13 @@
                     <!-- Local All -->
                     <div class="result-item">
                         <div class="chart-col">
-                            <h3 id="res-local-all">전체 직종 (국내)</h3>
-                            <div class="rank-label"><span class="prefix-top">상위 </span><span id="val-local-all">0</span><span class="suffix-percent">%</span></div>
                             <div class="bar-wrapper">
                                 <div class="bar" id="bar-local-all"></div>
+                                <div class="dynamic-percent-label" id="label-local-all"><span class="prefix-top">상위 </span><span id="val-local-all">100</span><span class="suffix-percent">%</span></div>
                             </div>
                         </div>
                         <div class="analysis-col">
+                            <h3 id="title-local-all" class="analysis-title"></h3>
                             <p id="analysis-local-all" class="analysis-text"></p>
                         </div>
                     </div>
@@ -162,13 +162,13 @@
                     <!-- Global All -->
                     <div class="result-item">
                         <div class="chart-col">
-                            <h3 id="res-global-all">전체 직종 (세계)</h3>
-                            <div class="rank-label"><span class="prefix-top">상위 </span><span id="val-global-all">0</span><span class="suffix-percent">%</span></div>
                             <div class="bar-wrapper">
                                 <div class="bar" id="bar-global-all"></div>
+                                <div class="dynamic-percent-label" id="label-global-all"><span class="prefix-top">상위 </span><span id="val-global-all">100</span><span class="suffix-percent">%</span></div>
                             </div>
                         </div>
                         <div class="analysis-col">
+                            <h3 id="title-global-all" class="analysis-title"></h3>
                             <p id="analysis-global-all" class="analysis-text"></p>
                         </div>
                     </div>
@@ -177,7 +177,28 @@
                 <button id="btn-recalculate" class="btn-secondary" onclick="resetForm()">다시 계산하기</button>
             </section>
         </main>
+        
+        <!-- SEO & FAQ Section for AdSense & Search Engines -->
+        <section class="seo-content" style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+            <h2 style="color: var(--gold); margin-bottom: 20px; font-size: 1.3rem;">글로벌 소득 랭킹 계산기 이용 안내 및 FAQ</h2>
+            
+            <h3 style="color: #fff; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem;">소득 랭킹 계산기란 무엇인가요?</h3>
+            <p style="margin-bottom: 15px;">이 계산기는 사용자의 연봉, 월급, 주급, 시급 등의 급여 데이터를 바탕으로 전 세계 및 국내에서 본인의 소득 수준이 상위 몇 퍼센트(%)에 해당하는지 객관적인 수치로 분석해 주는 도구입니다. 단 몇 초의 딥서치 분석을 통해 동일 직종 종사자들과의 객관적인 비교는 물론, 전체 직종을 아우르는 거시적인 통계 지표를 제공합니다.</p>
+            
+            <h3 style="color: #fff; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem;">글로벌 소득 비교가 중요한 이유</h3>
+            <p style="margin-bottom: 15px;">현대 사회는 국가 간의 경계가 희미해지는 초연결 사회입니다. 국내에서의 내 위치를 파악하는 것을 넘어, 글로벌 스탠다드 관점에서 나의 경제적 가치를 평가하는 것은 커리어 설계와 재무 목표 설정에 매우 중요합니다. 세계 경제 흐름 속에서 자신의 위치를 확인하고, 앞으로의 발전 방향을 설계하는 데 본 계산기가 훌륭한 길잡이가 되어 줄 것입니다.</p>
+            
+            <h3 style="color: #fff; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem;">분석 결과는 어떻게 산출되나요?</h3>
+            <p style="margin-bottom: 15px;">입력하신 급여 정보와 선택한 국가, 직종의 빅데이터를 기반으로 자체적인 정규분포 알고리즘을 통해 상위 퍼센티지를 도출합니다. 데이터는 지속적으로 갱신되며, 단순히 숫자의 높고 낮음을 넘어 사용자에게 실질적인 위안과 격려, 그리고 동기부여를 제공할 수 있도록 맞춤형 피드백을 제공하고 있습니다.</p>
+
+            <h3 style="color: #fff; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem;">자주 묻는 질문 (FAQ)</h3>
+            <ul style="list-style-type: disc; margin-left: 20px; margin-bottom: 15px;">
+                <li style="margin-bottom: 10px;"><strong>Q. 입력한 내 연봉 정보가 서버에 저장되나요?</strong><br>A. 전혀 저장되지 않습니다. 본 서비스는 오직 사용자의 기기(브라우저)에서만 계산을 수행하며, 개인정보나 입력한 급여 데이터는 그 어떤 외부 서버로도 전송되지 않으므로 안심하고 이용하셔도 됩니다.</li>
+                <li style="margin-bottom: 10px;"><strong>Q. 직종 목록에 제 직업이 없다면 어떻게 하나요?</strong><br>A. 가장 유사한 카테고리의 직종을 선택하시거나, 전체 직종 비교(Local All, Global All) 결과를 참고해 주시기 바랍니다. 향후 더 세분화된 직업군 데이터를 지속적으로 업데이트할 예정입니다.</li>
+                <li style="margin-bottom: 10px;"><strong>Q. 세금 공제 전(세전) 기준인가요, 세후 기준인가요?</strong><br>A. 일반적인 통계 지표는 세전(Gross Income) 금액을 기준으로 산출됩니다. 따라서 세전 금액을 입력하시는 것이 보다 정확한 글로벌 랭킹 결과를 확인하시는 데 도움이 됩니다.</li>
+            </ul>
+        </section>
     </div>
-    <script src="app.js?v=11"></script>
+    <script src="app.js?v=16"></script>
 </body>
 </html>

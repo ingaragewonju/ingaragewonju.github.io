@@ -17,9 +17,11 @@
 }
 
 body {
-    background-color: #06050b;
+    background-color: #04060c;
     background-image: 
-        linear-gradient(rgba(6, 5, 11, 0.92), rgba(6, 5, 11, 0.98)),
+        radial-gradient(circle at 50% 0%, rgba(0, 225, 255, 0.15), transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(255, 215, 0, 0.1), transparent 40%),
+        linear-gradient(rgba(6, 9, 19, 0.95), rgba(6, 9, 19, 0.98)),
         url('assets/wealth_bg.png');
     background-size: cover;
     background-position: center;
@@ -103,13 +105,13 @@ header {
 }
 
 .glass-panel {
-    background: rgba(22, 28, 45, 0.6);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(10, 14, 23, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 225, 255, 0.15);
     border-radius: 20px;
     padding: 40px 30px;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(0, 225, 255, 0.05), 0 15px 40px rgba(0, 0, 0, 0.7);
     display: none;
     animation: fadeIn 0.5s ease-out;
 }
@@ -276,24 +278,39 @@ button {
     padding-right: 20px;
 }
 
-.chart-col h3 {
-    font-size: 0.95rem;
+.analysis-title {
+    font-size: 1.05rem;
     color: var(--gold);
-    text-align: center;
-    margin-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 800;
 }
 
-.rank-label {
-    font-size: 1.2rem;
+.dynamic-percent-label {
+    position: absolute;
+    bottom: 0%; /* Updated by JS */
+    left: 50%;
+    transform: translate(-50%, -10px);
+    font-size: 1.3rem;
     font-weight: 800;
-    color: var(--accent-blue);
-    margin-bottom: 15px;
+    color: var(--gold);
+    white-space: nowrap;
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
 }
+.dynamic-percent-label.active {
+    opacity: 1;
+}
+
+.dynamic-percent-label .prefix-top { font-size: 0.9rem; color: var(--text-muted); }
+.dynamic-percent-label .suffix-percent { font-size: 1rem; color: var(--accent-blue); }
 
 .bar-wrapper {
-    height: 120px;
+    height: 180px;
     width: 100%;
-    max-width: 60px;
+    max-width: 50px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -301,13 +318,13 @@ button {
     border-radius: 6px 6px 0 0;
     position: relative;
     border-bottom: 2px solid var(--border-color);
+    margin-top: 30px;
 }
 
 .bar {
     width: 100%;
     background: linear-gradient(to top, #00e1ff, var(--gold));
     border-radius: 4px 4px 0 0;
-    transition: height 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 0%; /* Default 0, updated by JS */
     position: relative;
     overflow: hidden;

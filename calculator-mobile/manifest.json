@@ -1,0 +1,19 @@
+{
+  "name": "글로벌 소득 백분위 계산기",
+  "short_name": "글로벌 소득",
+  "description": "실제 통계 DB 기반 글로벌 소득 순위 및 분위 계산기",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0e0e11",
+  "theme_color": "#0e0e11",
+  "status_bar": "black-translucent",
+  "icons": [
+    {
+      "src": "assets/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
