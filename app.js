@@ -1,7 +1,7 @@
 // i18n Translations
 const translations = {
     ko: {
-        title: "내 소득은 몇 등??", subtitle: "전 세계와 내 나라에서 나의 위치를 확인하세요.", labelCountry: "국가", labelOccupation: "직종", labelGender: "성별", labelIncomeType: "급여 기준", labelAmount: "금액", btnSubmit: "내 등수 확인하기", adTitle: "글로벌 포털 데이터를 딥서치 분석 중입니다...", countdownText: "결과 확인까지", resultTitle: "소득 랭킹 결과", resLocalJob: "동일 직종 (국내)", resGlobalJob: "동일 직종 (세계)", resLocalAll: "전체 직종 (국내)", resGlobalAll: "전체 직종 (세계)", btnRecalculate: "다시 계산하기", prefixTop: "상위 ", suffixPercent: "%",
+        title: "내 소득은 몇 등??", subtitle: "전 세계와 내 나라에서 나의 위치를 확인하세요.", labelCountry: "국가", labelOccupation: "직종", labelJobLevel: "직급/경력", labelGender: "성별", labelIncomeType: "급여 기준", labelAmount: "금액", btnSubmit: "내 등수 확인하기", adTitle: "글로벌 포털 데이터를 딥서치 분석 중입니다...", countdownText: "결과 확인까지", resultTitle: "내 소득 랭킹 결과", resLocalJob: "동일 직종 (국내)", resGlobalJob: "동일 직종 (세계)", resLocalAll: "전체 직종 (국내)", resGlobalAll: "전체 직종 (세계)", btnRecalculate: "다시 계산하기", btnShare: "<i class='fa-solid fa-share-nodes'></i> 내 등수 공유하기", prefixTop: "상위 ", suffixPercent: "%",
         analysisTop: [
             "🎉 경이로운 수치입니다! [{category}] 약 {total}명 중 {rankNum}등으로, 상위 {rank}%에 오르셨습니다. 당신의 압도적인 능력이 빛을 발하고 있네요. 뜨거운 박수를 보냅니다!",
             "🌟 세계가 주목할 만한 성과입니다! [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 글로벌 무대에서도 당신의 가치는 최상위권입니다. 정말 자랑스럽습니다!",
@@ -20,81 +20,209 @@ const translations = {
             "✨ 위대한 성공은 모두 작은 발걸음에서 시작됩니다. [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 남들과 비교하기보다 어제보다 나아진 자신을 믿으세요. 위안과 따뜻한 격려를 보냅니다!",
             "🌻 상위 {rank}%. [{category}] 약 {total}명 중 {rankNum}등입니다. 지금 당장은 아쉬울 수 있어도, 당신이 품은 가능성은 무한합니다. 묵묵히 이겨내는 당신은 이미 충분히 멋진 사람입니다!"
         ],
-        catLocalJob: "{job} (국내)", catGlobalJob: "{job} (세계)", catLocalAll: "모든직종 (국내)", catGlobalAll: "모든직종 (세계)"
+        catLocalJob: "{job} (국내)", catGlobalJob: "{job} (세계)", catLocalAll: "모든직종 (국내)", catGlobalAll: "모든직종 (세계)",
+        seoTitle: "글로벌 소득 랭킹 계산기 이용 안내 및 FAQ",
+        seoQ1: "소득 랭킹 계산기란 무엇인가요?",
+        seoA1: "이 계산기는 사용자의 연봉, 월급, 주급, 시급 등의 급여 데이터를 바탕으로 전 세계 및 국내에서 본인의 소득 수준이 상위 몇 퍼센트(%)에 해당하는지 객관적인 수치로 분석해 주는 도구입니다. 단 몇 초의 딥서치 분석을 통해 동일 직종 종사자들과의 객관적인 비교는 물론, 전체 직종을 아우르는 거시적인 통계 지표를 제공합니다.",
+        seoQ2: "글로벌 소득 비교가 중요한 이유",
+        seoA2: "현대 사회는 국가 간의 경계가 희미해지는 초연결 사회입니다. 국내에서의 내 위치를 파악하는 것을 넘어, 글로벌 스탠다드 관점에서 나의 경제적 가치를 평가하는 것은 커리어 설계와 재무 목표 설정에 매우 중요합니다. 세계 경제 흐름 속에서 자신의 위치를 확인하고, 앞으로의 발전 방향을 설계하는 데 본 계산기가 훌륭한 길잡이가 되어 줄 것입니다.",
+        seoQ3: "분석 결과는 어떻게 산출되나요?",
+        seoA3: "입력하신 급여 정보와 선택한 국가, 직종의 빅데이터를 기반으로 자체적인 정규분포 알고리즘을 통해 상위 퍼센티지를 도출합니다. 데이터는 지속적으로 갱신되며, 단순히 숫자의 높고 낮음을 넘어 사용자에게 실질적인 위안과 격려, 그리고 동기부여를 제공할 수 있도록 맞춤형 피드백을 제공하고 있습니다.",
+        seoFaqTitle: "자주 묻는 질문 (FAQ)",
+        seoFaqQ1: "<strong>Q. 입력한 내 연봉 정보가 서버에 저장되나요?</strong><br>A. 전혀 저장되지 않습니다. 본 서비스는 오직 사용자의 기기(브라우저)에서만 계산을 수행하며, 개인정보나 입력한 급여 데이터는 그 어떤 외부 서버로도 전송되지 않으므로 안심하고 이용하셔도 됩니다.",
+        seoFaqQ2: "<strong>Q. 직종 목록에 제 직업이 없다면 어떻게 하나요?</strong><br>A. 가장 유사한 카테고리의 직종을 선택하시거나, 전체 직종 비교(Local All, Global All) 결과를 참고해 주시기 바랍니다. 향후 더 세분화된 직업군 데이터를 지속적으로 업데이트할 예정입니다.",
+        seoFaqQ3: "<strong>Q. 세금 공제 전(세전) 기준인가요, 세후 기준인가요?</strong><br>A. 일반적인 통계 지표는 세전(Gross Income) 금액을 기준으로 산출됩니다. 따라서 세전 금액을 입력하시는 것이 보다 정확한 글로벌 랭킹 결과를 확인하시는 데 도움이 됩니다."
     },
     en: {
-        title: "My Income Rank?", subtitle: "Discover where you stand globally and locally.", labelCountry: "Country", labelOccupation: "Occupation", labelGender: "Gender", labelIncomeType: "Income Type", labelAmount: "Amount", btnSubmit: "Check My Rank", adTitle: "Deep searching global portals...", countdownText: "Results in", resultTitle: "Your Ranking Results", resLocalJob: "Same Job (Local)", resGlobalJob: "Same Job (Global)", resLocalAll: "All Jobs (Local)", resGlobalAll: "All Jobs (Global)", btnRecalculate: "Recalculate", prefixTop: "Top ", suffixPercent: "%",
+        title: "My Income Rank?", subtitle: "Discover where you stand globally and locally.", labelCountry: "Country", labelOccupation: "Occupation", labelJobLevel: "Job Level", labelGender: "Gender", labelIncomeType: "Income Type", labelAmount: "Amount", btnSubmit: "Check My Rank", adTitle: "Deep searching global portals...", countdownText: "Results in", resultTitle: "Your Ranking Results", resLocalJob: "Same Job (Local)", resGlobalJob: "Same Job (Global)", resLocalAll: "All Jobs (Local)", resGlobalAll: "All Jobs (Global)", btnRecalculate: "Recalculate", btnShare: "<i class='fa-solid fa-share-nodes'></i> Share My Rank", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Absolutely amazing. In [{category}], out of approx {total} people, you rank around {rankNum}. Your effort and skills put you at the top!",
         analysisMiddle: "Top {rank}%. You are in a stable position. In [{category}], out of approx {total} people, you rank around {rankNum}. Keep going to reach higher!",
         analysisBottom: "Top {rank}%. Not bad at all! In [{category}], out of approx {total} people, you rank around {rankNum}. A little more effort will bring a huge leap!",
-        catLocalJob: "{job} in Your Country", catGlobalJob: "{job} Worldwide", catLocalAll: "All Professions in Your Country", catGlobalAll: "All Professions Worldwide"
+        catLocalJob: "{job} in Your Country", catGlobalJob: "{job} Worldwide", catLocalAll: "All Professions in Your Country", catGlobalAll: "All Professions Worldwide",
+        seoTitle: "Global Income Ranking Calculator Usage Guide & FAQ",
+        seoQ1: "What is the Income Ranking Calculator?",
+        seoA1: "This calculator analyzes your salary, monthly, weekly, or hourly wage data to objectively show your top percentile rank globally and locally. Through quick deep-search analysis, it provides a comparison with peers in the same occupation as well as macroeconomic statistics.",
+        seoQ2: "Why is global income comparison important?",
+        seoA2: "In a hyper-connected world, understanding your economic value from a global standard is crucial for career planning and financial goals. This calculator serves as a great guide to see where you stand in the global economic flow.",
+        seoQ3: "How are the analysis results calculated?",
+        seoA3: "We derive the top percentage using our proprietary normal distribution algorithm based on big data of your inputted salary, country, and occupation. Beyond simple numbers, we provide personalized feedback for motivation and encouragement.",
+        seoFaqTitle: "Frequently Asked Questions (FAQ)",
+        seoFaqQ1: "<strong>Q. Is my inputted salary information stored on a server?</strong><br>A. Not at all. This service performs calculations entirely on your device (browser). Your personal data and salary information are never transmitted to any external server.",
+        seoFaqQ2: "<strong>Q. What if my job isn't in the occupation list?</strong><br>A. Please select the closest matching category or refer to the 'All Professions' result. We are constantly updating the database with more detailed job categories.",
+        seoFaqQ3: "<strong>Q. Should I enter gross (before tax) or net (after tax) income?</strong><br>A. General statistical indicators are based on Gross Income (before tax). Therefore, entering your gross income will give you a more accurate global ranking."
     },
     es: {
-        title: "¿Mi rango de ingresos?", subtitle: "Descubre tu posición mundial y local.", labelCountry: "País", labelOccupation: "Ocupación", labelGender: "Género", labelIncomeType: "Tipo de ingresos", labelAmount: "Cantidad", btnSubmit: "Comprobar mi rango", adTitle: "Buscando datos globales...", countdownText: "Resultados en", resultTitle: "Resultados", resLocalJob: "Mismo Trabajo (Local)", resGlobalJob: "Mismo Trabajo (Mundial)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Mundial)", btnRecalculate: "Recalcular", prefixTop: "Top ", suffixPercent: "%",
+        title: "¿Mi rango de ingresos?", subtitle: "Descubre tu posición mundial y local.", labelCountry: "País", labelOccupation: "Ocupación", labelJobLevel: "Nivel de puesto", labelGender: "Género", labelIncomeType: "Tipo de ingresos", labelAmount: "Cantidad", btnSubmit: "Comprobar mi rango", adTitle: "Buscando datos globales...", countdownText: "Resultados en", resultTitle: "Resultados", resLocalJob: "Mismo Trabajo (Local)", resGlobalJob: "Mismo Trabajo (Mundial)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Mundial)", btnRecalculate: "Recalcular", btnShare: "<i class='fa-solid fa-share-nodes'></i> Compartilhar meu rank", btnShare: "<i class='fa-solid fa-share-nodes'></i> Compartir mi rango", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "¡Top {rank}%! Increíble. En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Eres el mejor!",
         analysisMiddle: "Top {rank}%. Posición estable. En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Sigue adelante!",
         analysisBottom: "Top {rank}%. ¡Nada mal! En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Te apoyamos!",
-        catLocalJob: "{job} en tu país", catGlobalJob: "{job} a nivel mundial", catLocalAll: "Todas las profesiones en tu país", catGlobalAll: "Todas las profesiones a nivel mundial"
+        catLocalJob: "{job} en tu país", catGlobalJob: "{job} a nivel mundial", catLocalAll: "Todas las profesiones en tu país", catGlobalAll: "Todas las profesiones a nivel mundial",
+        seoTitle: "Guía de uso y preguntas frecuentes",
+        seoQ1: "¿Qué es la calculadora de ingresos?",
+        seoA1: "Esta calculadora analiza su salario para mostrar objetivamente su rango porcentual a nivel mundial y local. Proporciona una comparación con colegas en la misma ocupación y estadísticas macroeconómicas.",
+        seoQ2: "¿Por qué es importante la comparación global?",
+        seoA2: "En un mundo hiperconectado, comprender su valor económico desde un estándar global es crucial para la planificación profesional y los objetivos financieros.",
+        seoQ3: "¿Cómo se calculan los resultados?",
+        seoA3: "Derivamos el porcentaje superior utilizando nuestro algoritmo basado en grandes datos de su salario, país y ocupación.",
+        seoFaqTitle: "Preguntas frecuentes (FAQ)",
+        seoFaqQ1: "<strong>P. ¿Se almacena la información de mi salario?</strong><br>R. En absoluto. Todo se calcula en su dispositivo.",
+        seoFaqQ2: "<strong>P. ¿Qué pasa si mi trabajo no está en la lista?</strong><br>R. Seleccione la categoría más cercana o consulte el resultado de 'Todas las profesiones'.",
+        seoFaqQ3: "<strong>P. ¿Debo ingresar ingresos brutos o netos?</strong><br>R. Ingrese los ingresos brutos (antes de impuestos) para obtener un resultado más preciso."
     },
     zh: {
-        title: "我的收入排名？", subtitle: "探索您在全球和本地的地位。", labelCountry: "国家", labelOccupation: "职业", labelGender: "性别", labelIncomeType: "收入类型", labelAmount: "金额", btnSubmit: "查看排名", adTitle: "深度搜索全球门户...", countdownText: "结果还有", resultTitle: "您的排名结果", resLocalJob: "同行 (国内)", resGlobalJob: "同行 (全球)", resLocalAll: "所有行业 (国内)", resGlobalAll: "所有行业 (全球)", btnRecalculate: "重新计算", prefixTop: "前 ", suffixPercent: "%",
+        title: "我的收入排名？", subtitle: "探索您在全球和本地的地位。", labelCountry: "国家", labelOccupation: "职业", labelJobLevel: "职位级别", labelGender: "性别", labelIncomeType: "收入类型", labelAmount: "金额", btnSubmit: "查看排名", adTitle: "深度搜索全球门户...", countdownText: "结果还有", resultTitle: "您的排名结果", resLocalJob: "同行 (国内)", resGlobalJob: "同行 (全球)", resLocalAll: "所有行业 (国内)", resGlobalAll: "所有行业 (全球)", btnRecalculate: "重新计算", btnShare: "<i class='fa-solid fa-share-nodes'></i> 分享我的排名", prefixTop: "前 ", suffixPercent: "%",
         analysisTop: "前 {rank}%！太棒了。在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。您的实力证明您处于顶尖水平！",
         analysisMiddle: "前 {rank}%。位置稳定。在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。继续前进，干得好！",
         analysisBottom: "前 {rank}%。现在的位置也不错！在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。再努力一点就能有巨大飞跃！",
-        catLocalJob: "国内 {job}", catGlobalJob: "全球 {job}", catLocalAll: "国内所有职业", catGlobalAll: "全球所有职业"
+        catLocalJob: "国内 {job}", catGlobalJob: "全球 {job}", catLocalAll: "国内所有职业", catGlobalAll: "全球所有职业",
+        seoTitle: "使用指南和常见问题解答",
+        seoQ1: "什么是收入排名计算器？",
+        seoA1: "该计算器分析您的薪资数据，客观地显示您在全球和本地的前百分比排名。",
+        seoQ2: "为什么全球收入比较很重要？",
+        seoA2: "在高度互联的世界中，从全球标准了解您的经济价值对于职业规划至关重要。",
+        seoQ3: "结果是如何计算的？",
+        seoA3: "我们根据您的薪水、国家和职业的大数据，使用我们专有的算法得出前百分比。",
+        seoFaqTitle: "常见问题 (FAQ)",
+        seoFaqQ1: "<strong>问：我的薪水信息会存储在服务器上吗？</strong><br>答：完全不会。一切都在您的设备上计算。",
+        seoFaqQ2: "<strong>问：如果我的工作不在列表中怎么办？</strong><br>答：请选择最接近的类别或参考“所有职业”结果。",
+        seoFaqQ3: "<strong>问：我应该输入税前还是税后收入？</strong><br>答：请输入税前总收入以获得更准确的结果。"
     },
     ja: {
-        title: "私の収入ランクは？", subtitle: "世界と自国での位置を確認しましょう。", labelCountry: "国", labelOccupation: "職種", labelGender: "性別", labelIncomeType: "給与基準", labelAmount: "金額", btnSubmit: "ランクを確認", adTitle: "データを分析中...", countdownText: "結果まで", resultTitle: "ランキング結果", resLocalJob: "同職種 (国内)", resGlobalJob: "同職種 (世界)", resLocalAll: "全職種 (国内)", resGlobalAll: "全職種 (世界)", btnRecalculate: "再計算", prefixTop: "上位 ", suffixPercent: "%",
+        title: "私の収入ランクは？", subtitle: "世界と自国での位置を確認しましょう。", labelCountry: "国", labelOccupation: "職種", labelJobLevel: "職位/経歴", labelGender: "性別", labelIncomeType: "給与基準", labelAmount: "金額", btnSubmit: "ランクを確認", adTitle: "データを分析中...", countdownText: "結果まで", resultTitle: "ランキング結果", resLocalJob: "同職種 (国内)", resGlobalJob: "同職種 (世界)", resLocalAll: "全職種 (国内)", resGlobalAll: "全職種 (世界)", btnRecalculate: "再計算", btnShare: "<i class='fa-solid fa-share-nodes'></i> ランクをシェアする", prefixTop: "上位 ", suffixPercent: "%",
         analysisTop: "上位 {rank}%！本当に素晴らしいです。[{category}]の約 {total}人中、あなたはおよそ {rankNum}位です。最高です！",
         analysisMiddle: "上位 {rank}%。安定した位置です。[{category}]の約 {total}人中、およそ {rankNum}位です。さらに上を目指しましょう！",
         analysisBottom: "上位 {rank}%。現在の位置も悪くありません！[{category}]の約 {total}人中、およそ {rankNum}位です。応援しています！",
-        catLocalJob: "国内の {job}", catGlobalJob: "世界の {job}", catLocalAll: "国内のすべての職種", catGlobalAll: "世界のすべての職種"
+        catLocalJob: "国内の {job}", catGlobalJob: "世界の {job}", catLocalAll: "国内のすべての職種", catGlobalAll: "世界のすべての職種",
+        seoTitle: "ご利用ガイドとよくある質問",
+        seoQ1: "収入ランキング計算機とは何ですか？",
+        seoA1: "この計算機は、あなたの給与データを分析し、世界および国内での上位パーセンタイルを客観的に示します。",
+        seoQ2: "なぜグローバルな収入比較が重要なのですか？",
+        seoA2: "高度につながった世界では、グローバルな基準で自分の経済的価値を理解することがキャリア形成において重要です。",
+        seoQ3: "結果はどのように計算されますか？",
+        seoA3: "あなたの給与、国、職業のビッグデータに基づいて、独自のアルゴリズムを使用して上位パーセンテージを導き出します。",
+        seoFaqTitle: "よくある質問 (FAQ)",
+        seoFaqQ1: "<strong>Q. 入力した給与情報はサーバーに保存されますか？</strong><br>A. いいえ、すべてお使いのデバイス上で計算されます。",
+        seoFaqQ2: "<strong>Q. リストに自分の職業がない場合はどうすればよいですか？</strong><br>A. 最も近いカテゴリを選択するか、「すべての職種」の結果を参照してください。",
+        seoFaqQ3: "<strong>Q. 税引き前と税引き後のどちらの収入を入力すべきですか？</strong><br>A. より正確な結果を得るには、税引き前（額面）の収入を入力してください。"
     },
     hi: {
-        title: "मेरी आय रैंक?", subtitle: "विश्व और स्थानीय स्तर पर अपनी स्थिति जानें।", labelCountry: "देश", labelOccupation: "पेशा", labelGender: "लिंग", labelIncomeType: "आय का प्रकार", labelAmount: "रकम", btnSubmit: "रैंक जांचें", adTitle: "पोर्टल्स खोज रहे हैं...", countdownText: "परिणाम इसमें", resultTitle: "रैंकिंग परिणाम", resLocalJob: "समान नौकरी (स्थानीय)", resGlobalJob: "समान नौकरी (वैश्विक)", resLocalAll: "सभी (स्थानीय)", resGlobalAll: "सभी (वैश्विक)", btnRecalculate: "पुनर्गणना करें", prefixTop: "शीर्ष ", suffixPercent: "%",
+        title: "मेरी आय रैंक?", subtitle: "विश्व और स्थानीय स्तर पर अपनी स्थिति जानें।", labelCountry: "देश", labelOccupation: "पेशा", labelJobLevel: "नौकरी का स्तर", labelGender: "लिंग", labelIncomeType: "आय का प्रकार", labelAmount: "रकम", btnSubmit: "रैंक जांचें", adTitle: "पोर्टल्स खोज रहे हैं...", countdownText: "परिणाम इसमें", resultTitle: "रैंकिंग परिणाम", resLocalJob: "समान नौकरी (स्थानीय)", resGlobalJob: "समान नौकरी (वैश्विक)", resLocalAll: "सभी (स्थानीय)", resGlobalAll: "सभी (वैश्विक)", btnRecalculate: "पुनर्गणना करें", btnShare: "<i class='fa-solid fa-share-nodes'></i> मेरी रैंक साझा करें", prefixTop: "शीर्ष ", suffixPercent: "%",
         analysisTop: "शीर्ष {rank}%! बिल्कुल अद्भुत। [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। आप सर्वश्रेष्ठ हैं!",
         analysisMiddle: "शीर्ष {rank}%. स्थिर स्थिति। [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। आगे बढ़ते रहें!",
         analysisBottom: "शीर्ष {rank}%. बुरा नहीं है! [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। हम आपके साथ हैं!",
-        catLocalJob: "आपके देश में {job}", catGlobalJob: "दुनिया भर में {job}", catLocalAll: "आपके देश में सभी पेशे", catGlobalAll: "दुनिया भर में सभी पेशे"
+        catLocalJob: "आपके देश में {job}", catGlobalJob: "दुनिया भर में {job}", catLocalAll: "आपके देश में सभी पेशे", catGlobalAll: "दुनिया भर में सभी पेशे",
+        seoTitle: "उपयोग गाइड और अक्सर पूछे जाने वाले प्रश्न",
+        seoQ1: "आय रैंकिंग कैलकुलेटर क्या है?",
+        seoA1: "यह कैलकुलेटर विश्व स्तर पर और स्थानीय रूप से आपकी शीर्ष प्रतिशत रैंकिंग दिखाने के लिए आपके वेतन का विश्लेषण करता है।",
+        seoQ2: "वैश्विक तुलना क्यों महत्वपूर्ण है?",
+        seoA2: "वैश्विक स्तर पर अपने आर्थिक मूल्य को समझना करियर की योजना के लिए महत्वपूर्ण है।",
+        seoQ3: "परिणामों की गणना कैसे की जाती है?",
+        seoA3: "हम आपके वेतन, देश और व्यवसाय के बिग डेटा के आधार पर अपने एल्गोरिदम का उपयोग करते हैं।",
+        seoFaqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
+        seoFaqQ1: "<strong>प्र. क्या मेरे वेतन की जानकारी संग्रहीत है?</strong><br>उ. बिल्कुल नहीं। सब कुछ आपके डिवाइस पर ही रहता है।",
+        seoFaqQ2: "<strong>प्र. क्या होगा यदि मेरी नौकरी सूची में नहीं है?</strong><br>उ. कृपया निकटतम श्रेणी चुनें या 'सभी पेशे' का परिणाम देखें।",
+        seoFaqQ3: "<strong>प्र. क्या मुझे सकल (कर से पहले) या शुद्ध (कर के बाद) आय दर्ज करनी चाहिए?</strong><br>उ. कृपया अधिक सटीक परिणाम के लिए सकल आय (कर से पहले) दर्ज करें。"
     },
     ar: {
-        title: "ترتيب الدخل الخاص بي؟", subtitle: "اكتشف موقعك عالمياً ومحلياً.", labelCountry: "دولة", labelOccupation: "مهنة", labelGender: "جنس", labelIncomeType: "نوع الدخل", labelAmount: "كمية", btnSubmit: "التحقق", adTitle: "يتم تحليل البيانات...", countdownText: "النتائج في", resultTitle: "نتائج الترتيب", resLocalJob: "نفس الوظيفة (محلي)", resGlobalJob: "نفس الوظيفة (عالمي)", resLocalAll: "الكل (محلي)", resGlobalAll: "الكل (عالمي)", btnRecalculate: "إعادة حساب", prefixTop: "أعلى ", suffixPercent: "%",
+        title: "ترتيب الدخل الخاص بي؟", subtitle: "اكتشف موقعك عالمياً ومحلياً.", labelCountry: "دولة", labelOccupation: "مهنة", labelJobLevel: "المستوى الوظيفي", labelGender: "جنس", labelIncomeType: "نوع الدخل", labelAmount: "كمية", btnSubmit: "التحقق", adTitle: "يتم تحليل البيانات...", countdownText: "النتائج في", resultTitle: "نتائج الترتيب", resLocalJob: "نفس الوظيفة (محلي)", resGlobalJob: "نفس الوظيفة (عالمي)", resLocalAll: "الكل (محلي)", resGlobalAll: "الكل (عالمي)", btnRecalculate: "إعادة حساب", btnShare: "<i class='fa-solid fa-share-nodes'></i> شارك ترتيبي", prefixTop: "أعلى ", suffixPercent: "%",
         analysisTop: "أعلى {rank}%! مذهل. في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. أنت الأفضل!",
         analysisMiddle: "أعلى {rank}%. موقع مستقر. في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. استمر!",
         analysisBottom: "أعلى {rank}%. ليس سيئًا! في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. نحن ندعمك!",
-        catLocalJob: "{job} في بلدك", catGlobalJob: "{job} حول العالم", catLocalAll: "جميع المهن في بلدك", catGlobalAll: "جميع المهن حول العالم"
+        catLocalJob: "{job} في بلدك", catGlobalJob: "{job} حول العالم", catLocalAll: "جميع المهن في بلدك", catGlobalAll: "جميع المهن حول العالم",
+        seoTitle: "دليل الاستخدام والأسئلة الشائعة",
+        seoQ1: "ما هي حاسبة ترتيب الدخل؟",
+        seoA1: "تقوم هذه الحاسبة بتحليل راتبك لإظهار تصنيفك المئوي محليًا وعالميًا.",
+        seoQ2: "لماذا المقارنة العالمية مهمة؟",
+        seoA2: "فهم قيمتك الاقتصادية عالميًا أمر بالغ الأهمية للتخطيط المهني.",
+        seoQ3: "كيف يتم حساب النتائج؟",
+        seoA3: "نستخدم خوارزمية تعتمد على البيانات الضخمة لراتبك وبلدك ومهنتك.",
+        seoFaqTitle: "الأسئلة الشائعة (FAQ)",
+        seoFaqQ1: "<strong>س. هل يتم تخزين معلومات راتبي؟</strong><br>ج. على الإطلاق. يتم حساب كل شيء على جهازك.",
+        seoFaqQ2: "<strong>س. ماذا لو لم تكن وظيفتي في القائمة؟</strong><br>ج. يرجى اختيار الفئة الأقرب أو الرجوع إلى 'جميع المهن'.",
+        seoFaqQ3: "<strong>س. هل يجب أن أدخل الدخل الإجمالي (قبل الضريبة) أم الصافي (بعد الضريبة)؟</strong><br>ج. يرجى إدخال الدخل الإجمالي (قبل الضريبة) للحصول على نتيجة أكثر دقة."
     },
     fr: {
-        title: "Mon classement de revenus ?", subtitle: "Découvrez votre position mondiale et locale.", labelCountry: "Pays", labelOccupation: "Profession", labelGender: "Genre", labelIncomeType: "Type de revenu", labelAmount: "Montant", btnSubmit: "Vérifier", adTitle: "Analyse des portails...", countdownText: "Résultats dans", resultTitle: "Vos résultats", resLocalJob: "Même travail (Local)", resGlobalJob: "Même travail (Mondial)", resLocalAll: "Tous (Local)", resGlobalAll: "Tous (Mondial)", btnRecalculate: "Recalculer", prefixTop: "Top ", suffixPercent: "%",
+        title: "Mon classement de revenus ?", subtitle: "Découvrez votre position mondiale et locale.", labelCountry: "Pays", labelOccupation: "Profession", labelJobLevel: "Niveau de poste", labelGender: "Genre", labelIncomeType: "Type de revenu", labelAmount: "Montant", btnSubmit: "Vérifier", adTitle: "Analyse des portails...", countdownText: "Résultats dans", resultTitle: "Vos résultats", resLocalJob: "Même travail (Local)", resGlobalJob: "Même travail (Mondial)", resLocalAll: "Tous (Local)", resGlobalAll: "Tous (Mondial)", btnRecalculate: "Recalculer", btnShare: "<i class='fa-solid fa-share-nodes'></i> Partager mon rang", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}% ! Incroyable. Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Vous êtes le meilleur !",
         analysisMiddle: "Top {rank}%. Position stable. Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Continuez !",
         analysisBottom: "Top {rank}%. Pas mal ! Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Un petit effort de plus !",
-        catLocalJob: "{job} dans votre pays", catGlobalJob: "{job} dans le monde", catLocalAll: "Toutes les professions dans votre pays", catGlobalAll: "Toutes les professions dans le monde"
+        catLocalJob: "{job} dans votre pays", catGlobalJob: "{job} dans le monde", catLocalAll: "Toutes les professions dans votre pays", catGlobalAll: "Toutes les professions dans le monde",
+        seoTitle: "Guide d'utilisation et FAQ",
+        seoQ1: "Qu'est-ce que le calculateur de revenus ?",
+        seoA1: "Ce calculateur analyse votre salaire pour afficher objectivement votre rang centile au niveau mondial et local.",
+        seoQ2: "Pourquoi la comparaison mondiale est-elle importante ?",
+        seoA2: "Comprendre votre valeur économique mondiale est crucial pour la planification de carrière.",
+        seoQ3: "Comment les résultats sont-ils calculés ?",
+        seoA3: "Nous utilisons un algorithme basé sur les mégadonnées de votre salaire, de votre pays et de votre profession.",
+        seoFaqTitle: "Foire aux questions (FAQ)",
+        seoFaqQ1: "<strong>Q. Les informations sur mon salaire sont-elles stockées ?</strong><br>R. Pas du tout. Tout est calculé sur votre appareil.",
+        seoFaqQ2: "<strong>Q. Que faire si mon travail n'est pas dans la liste ?</strong><br>R. Veuillez sélectionner la catégorie la plus proche ou vous référer à 'Toutes les professions'.",
+        seoFaqQ3: "<strong>Q. Dois-je saisir un revenu brut ou net ?</strong><br>R. Veuillez saisir le revenu brut (avant impôts) pour un résultat plus précis."
     },
     ru: {
-        title: "Мой рейтинг доходов?", subtitle: "Узнайте свое положение.", labelCountry: "Страна", labelOccupation: "Профессия", labelGender: "Пол", labelIncomeType: "Тип дохода", labelAmount: "Сумма", btnSubmit: "Проверить", adTitle: "Поиск по порталам...", countdownText: "Результаты через", resultTitle: "Ваши результаты", resLocalJob: "Та же работа (Местно)", resGlobalJob: "Та же работа (В мире)", resLocalAll: "Все (Местно)", resGlobalAll: "Все (В мире)", btnRecalculate: "Пересчитать", prefixTop: "Топ ", suffixPercent: "%",
+        title: "Мой рейтинг доходов?", subtitle: "Узнайте свое положение.", labelCountry: "Страна", labelOccupation: "Профессия", labelJobLevel: "Уровень должности", labelGender: "Пол", labelIncomeType: "Тип дохода", labelAmount: "Сумма", btnSubmit: "Проверить", adTitle: "Поиск по порталам...", countdownText: "Результаты через", resultTitle: "Ваши результаты", resLocalJob: "Та же работа (Местно)", resGlobalJob: "Та же работа (В мире)", resLocalAll: "Все (Местно)", resGlobalAll: "Все (В мире)", btnRecalculate: "Пересчитать", btnShare: "<i class='fa-solid fa-share-nodes'></i> Поделиться рейтингом", prefixTop: "Топ ", suffixPercent: "%",
         analysisTop: "Топ {rank}%! Потрясающе. В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Вы лучший!",
         analysisMiddle: "Топ {rank}%. Стабильно. В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Продолжайте!",
         analysisBottom: "Топ {rank}%. Неплохо! В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Мы болеем за вас!",
-        catLocalJob: "{job} в вашей стране", catGlobalJob: "{job} в мире", catLocalAll: "Все профессии в вашей стране", catGlobalAll: "Все профессии в мире"
+        catLocalJob: "{job} в вашей стране", catGlobalJob: "{job} в мире", catLocalAll: "Все профессии в вашей стране", catGlobalAll: "Все профессии в мире",
+        seoTitle: "Руководство и часто задаваемые вопросы",
+        seoQ1: "Что такое калькулятор доходов?",
+        seoA1: "Этот калькулятор анализирует вашу зарплату и показывает ваш процентный рейтинг в мире и стране.",
+        seoQ2: "Почему важна глобальная статистика?",
+        seoA2: "Понимание вашей экономической ценности важно для карьерного роста.",
+        seoQ3: "Как рассчитываются результаты?",
+        seoA3: "Мы используем алгоритм на основе больших данных о вашей зарплате, стране и профессии.",
+        seoFaqTitle: "Часто задаваемые вопросы (FAQ)",
+        seoFaqQ1: "<strong>В. Сохраняется ли моя зарплата?</strong><br>О. Нет, все вычисления происходят на вашем устройстве.",
+        seoFaqQ2: "<strong>В. Что если моей профессии нет в списке?</strong><br>О. Выберите ближайшую категорию или посмотрите результаты для 'Все профессии'.",
+        seoFaqQ3: "<strong>В. Должен ли я вводить доход до или после уплаты налогов?</strong><br>О. Пожалуйста, введите доход до уплаты налогов (брутто) для более точного результата."
     },
     pt: {
-        title: "Minha classificação de renda?", subtitle: "Descubra sua posição global e local.", labelCountry: "País", labelOccupation: "Ocupação", labelGender: "Gênero", labelIncomeType: "Tipo de renda", labelAmount: "Valor", btnSubmit: "Verificar", adTitle: "Analisando portais globais...", countdownText: "Resultados em", resultTitle: "Resultados", resLocalJob: "Mesmo Trabalho (Local)", resGlobalJob: "Mesmo Trabalho (Global)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Global)", btnRecalculate: "Recalcular", prefixTop: "Top ", suffixPercent: "%",
+        title: "Minha classificação de renda?", subtitle: "Descubra sua posição global e local.", labelCountry: "País", labelOccupation: "Ocupação", labelJobLevel: "Nível do cargo", labelGender: "Gênero", labelIncomeType: "Tipo de renda", labelAmount: "Valor", btnSubmit: "Verificar", adTitle: "Analisando portais globais...", countdownText: "Resultados em", resultTitle: "Resultados", resLocalJob: "Mesmo Trabalho (Local)", resGlobalJob: "Mesmo Trabalho (Global)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Global)", btnRecalculate: "Recalcular", btnShare: "<i class='fa-solid fa-share-nodes'></i> Compartilhar meu rank", btnShare: "<i class='fa-solid fa-share-nodes'></i> Compartir mi rango", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Incrível. Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Você é o melhor!",
         analysisMiddle: "Top {rank}%. Posição estável. Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Continue assim!",
         analysisBottom: "Top {rank}%. Nada mal! Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Estamos torcendo por você!",
-        catLocalJob: "{job} no seu país", catGlobalJob: "{job} no mundo", catLocalAll: "Todas as profissões no seu país", catGlobalAll: "Todas as profissões no mundo"
+        catLocalJob: "{job} no seu país", catGlobalJob: "{job} no mundo", catLocalAll: "Todas as profissões no seu país", catGlobalAll: "Todas as profissões no mundo",
+        seoTitle: "Guia de Uso e FAQ",
+        seoQ1: "O que é a calculadora de renda?",
+        seoA1: "Esta calculadora analisa seu salário para mostrar sua classificação percentual global e local.",
+        seoQ2: "Por que a comparação global é importante?",
+        seoA2: "Compreender o seu valor económico global é crucial para o planeamento de carreira.",
+        seoQ3: "Como os resultados são calculados?",
+        seoA3: "Utilizamos um algoritmo baseado nos grandes dados de seu salário, país e ocupação.",
+        seoFaqTitle: "Perguntas Frequentes (FAQ)",
+        seoFaqQ1: "<strong>P. Minha informação de salário é armazenada?</strong><br>R. De jeito nenhum. Tudo é calculado no seu dispositivo.",
+        seoFaqQ2: "<strong>P. E se o meu trabalho não estiver na lista?</strong><br>R. Por favor, selecione a categoria mais próxima ou veja 'Todas as profissões'.",
+        seoFaqQ3: "<strong>P. Devo inserir o salário bruto ou líquido?</strong><br>R. Insira a renda bruta (antes dos impostos) para um resultado mais preciso."
     },
     de: {
-        title: "Mein Einkommensrang?", subtitle: "Entdecken Sie Ihre Position.", labelCountry: "Land", labelOccupation: "Beruf", labelGender: "Geschlecht", labelIncomeType: "Einkommensart", labelAmount: "Betrag", btnSubmit: "Überprüfen", adTitle: "Analysiere Portale...", countdownText: "Ergebnisse in", resultTitle: "Ranking-Ergebnisse", resLocalJob: "Gleicher Job (Lokal)", resGlobalJob: "Gleicher Job (Global)", resLocalAll: "Alle (Lokal)", resGlobalAll: "Alle (Global)", btnRecalculate: "Neu berechnen", prefixTop: "Top ", suffixPercent: "%",
+        title: "Mein Einkommensrang?", subtitle: "Entdecken Sie Ihre Position.", labelCountry: "Land", labelOccupation: "Beruf", labelJobLevel: "Karrierelevel", labelGender: "Geschlecht", labelIncomeType: "Einkommensart", labelAmount: "Betrag", btnSubmit: "Überprüfen", adTitle: "Analysiere Portale...", countdownText: "Ergebnisse in", resultTitle: "Ranking-Ergebnisse", resLocalJob: "Gleicher Job (Lokal)", resGlobalJob: "Gleicher Job (Global)", resLocalAll: "Alle (Lokal)", resGlobalAll: "Alle (Global)", btnRecalculate: "Neu berechnen", btnShare: "<i class='fa-solid fa-share-nodes'></i> Mein Ranking teilen", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Erstaunlich. In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Sie sind der Beste!",
         analysisMiddle: "Top {rank}%. Stabile Position. In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Weiter so!",
         analysisBottom: "Top {rank}%. Nicht schlecht! In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Wir feuern Sie an!",
-        catLocalJob: "{job} in Ihrem Land", catGlobalJob: "{job} weltweit", catLocalAll: "Alle Berufe in Ihrem Land", catGlobalAll: "Alle Berufe weltweit"
+        catLocalJob: "{job} in Ihrem Land", catGlobalJob: "{job} weltweit", catLocalAll: "Alle Berufe in Ihrem Land", catGlobalAll: "Alle Berufe weltweit",
+        seoTitle: "Benutzerhandbuch & FAQ",
+        seoQ1: "Was ist der Einkommensrechner?",
+        seoA1: "Dieser Rechner analysiert Ihr Gehalt und zeigt Ihren prozentualen Rang weltweit und lokal.",
+        seoQ2: "Warum ist ein globaler Vergleich wichtig?",
+        seoA2: "Das Verständnis Ihres globalen wirtschaftlichen Werts ist wichtig für die Karriereplanung.",
+        seoQ3: "Wie werden die Ergebnisse berechnet?",
+        seoA3: "Wir verwenden einen Algorithmus basierend auf Big Data über Ihr Gehalt, Land und Beruf.",
+        seoFaqTitle: "Häufig gestellte Fragen (FAQ)",
+        seoFaqQ1: "<strong>F. Werden meine Gehaltsinformationen gespeichert?</strong><br>A. Überhaupt nicht. Alles wird auf Ihrem Gerät berechnet.",
+        seoFaqQ2: "<strong>F. Was ist, wenn mein Beruf nicht in der Liste steht?</strong><br>A. Bitte wählen Sie die ähnlichste Kategorie oder sehen Sie bei 'Alle Berufe'.",
+        seoFaqQ3: "<strong>F. Soll ich Brutto- oder Nettogehalt eingeben?</strong><br>A. Bitte geben Sie das Bruttogehalt (vor Steuern) für ein genaueres Ergebnis ein."
     }
 };
 
 const uiData = {
+    jobLevel: [
+        { val: 'all', txt: { ko: '직급 무관', en: 'All Levels', es: 'Todos', zh: '所有级别', ja: 'すべての職位', hi: 'सभी स्तर', ar: 'كل المستويات', fr: 'Tous les niveaux', ru: 'Все уровни', pt: 'Todos os níveis', de: 'Alle Ebenen' } },
+        { val: 'entry', txt: { ko: '신입/사원급', en: 'Entry-level / Junior', es: 'Nivel Inicial', zh: '初级/助理', ja: '新入社員/一般社員', hi: 'प्रवेश स्तर', ar: 'مبتدئ', fr: 'Débutant / Junior', ru: 'Начальный уровень', pt: 'Nível de Entrada', de: 'Einstiegslevel / Junior' } },
+        { val: 'mid', txt: { ko: '대리/과장급', en: 'Mid-level / Associate', es: 'Nivel Medio', zh: '中级', ja: '主任/係長級', hi: 'मध्य स्तर', ar: 'متوسط', fr: 'Niveau Intermédiaire', ru: 'Средний уровень', pt: 'Nível Pleno', de: 'Mittleres Level' } },
+        { val: 'senior', txt: { ko: '차장/부장급', en: 'Senior-level / Manager', es: 'Senior / Gerente', zh: '高级/经理', ja: '課長/部長級', hi: 'वरिष्ठ स्तर', ar: 'متقدم / مدير', fr: 'Senior / Manager', ru: 'Старший уровень', pt: 'Sênior / Gerente', de: 'Senior-Level / Manager' } },
+        { val: 'exec', txt: { ko: '임원/대표급', en: 'Executive / Director', es: 'Director / Ejecutivo', zh: '总监/高管', ja: '役員/代表級', hi: 'निदेशक / कार्यकारी', ar: 'مدير / تنفيذي', fr: 'Directeur / Exécutif', ru: 'Директор', pt: 'Diretor / Executivo', de: 'Führungskraft' } }
+    ],
     gender: [
         { val: 'all', txt: { ko: '전체 (All)', en: 'All', es: 'Todos', zh: '全部', ja: 'すべて', hi: 'सभी', ar: 'الجميع', fr: 'Tous', ru: 'Все', pt: 'Todos', de: 'Alle' } },
         { val: 'male', txt: { ko: '남성 (Male)', en: 'Male', es: 'Masculino', zh: '男性', ja: '男性', hi: 'पुरुष', ar: 'ذكر', fr: 'Homme', ru: 'Мужской', pt: 'Masculino', de: 'Männlich' } },
@@ -131,7 +259,7 @@ const uiData = {
 };
 
 function getT(text, lang) {
-    if(lang === 'ko') return text;
+    if (lang === 'ko') return text;
     const map = {
         // Large
         "IT / 개발 / 데이터": { en: "IT / Dev / Data", zh: "IT / 开发 / 数据", es: "TI / Desarrollo", ja: "IT / 開発 / データ" },
@@ -404,20 +532,24 @@ const el = (id) => document.getElementById(id);
 
 function updateStaticDropdowns(lang) {
     const cSel = el('country');
+    const jlSel = el('job-level');
     const gSel = el('gender');
     const iSel = el('income-type');
-    
+
     const cVal = cSel.value || 'kr';
+    const jlVal = jlSel ? (jlSel.value || 'all') : 'all';
     const gVal = gSel.value || 'all';
     const iVal = iSel.value || 'yearly';
-    
-    cSel.innerHTML = ''; gSel.innerHTML = ''; iSel.innerHTML = '';
-    
+
+    cSel.innerHTML = ''; if (jlSel) jlSel.innerHTML = ''; gSel.innerHTML = ''; iSel.innerHTML = '';
+
     uiData.country.forEach(c => { cSel.innerHTML += `<option value="${c.val}">${c.txt[lang] || c.txt['en'] || c.txt['ko']}</option>`; });
+    if (jlSel) uiData.jobLevel.forEach(j => { jlSel.innerHTML += `<option value="${j.val}">${j.txt[lang] || j.txt['en'] || j.txt['ko']}</option>`; });
     uiData.gender.forEach(g => { gSel.innerHTML += `<option value="${g.val}">${g.txt[lang] || g.txt['en'] || g.txt['ko']}</option>`; });
     uiData.incomeType.forEach(i => { iSel.innerHTML += `<option value="${i.val}">${i.txt[lang] || i.txt['en'] || i.txt['ko']}</option>`; });
-    
+
     cSel.value = cVal;
+    if (jlSel) jlSel.value = jlVal;
     gSel.value = gVal;
     iSel.value = iVal;
     updateCurrencyLabel();
@@ -426,7 +558,7 @@ function updateStaticDropdowns(lang) {
 function updateCurrencyLabel() {
     const cSel = el('country');
     const curVal = cSel.value || 'kr';
-    if(currencyMap[curVal]) {
+    if (currencyMap[curVal]) {
         el('currency-label').innerText = `(${currencyMap[curVal].code})`;
     }
 }
@@ -444,12 +576,12 @@ const AdManager = {
     },
     timerId: null,
     onComplete: null,
-    showAd: function(lang, callback) {
+    showAd: function (lang, callback) {
         this.onComplete = callback;
         const adData = this.networks[lang] || this.networks['default'];
-        
+
         const placeholder = document.querySelector('.ad-banner-placeholder');
-        
+
         if (lang === 'ko') {
             // 실제 한국 광고사(쿠팡 파트너스 / 카카오 애드핏) 테스트 코드
             // 참고: 실제 수익을 창출하려면 본인의 고유 ID(trackingCode, data-ad-unit)를 발급받아 입력해야 합니다.
@@ -475,14 +607,14 @@ const AdManager = {
             const randomAd = adImages[Math.floor(Math.random() * adImages.length)];
             placeholder.innerHTML = `<img id="ad-banner-image" src="${randomAd}" alt="Advertisement" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">`;
         }
-        
+
         el('ad-overlay').classList.remove('ad-hidden');
-        
+
         let timeLeft = 5;
         el('ad-timer').innerText = timeLeft;
-        
+
         if (this.timerId) clearInterval(this.timerId);
-        
+
         this.timerId = setInterval(() => {
             timeLeft--;
             if (timeLeft > 0) {
@@ -508,27 +640,42 @@ function skipAd() {
 function changeLanguage() {
     const lang = el('language').value;
     const t = translations[lang] || translations['en'];
-    
+
     // Update text
-    if(t.title && el('title-text')) el('title-text').innerText = t.title;
-    if(t.subtitle && el('subtitle-text')) el('subtitle-text').innerText = t.subtitle;
-    if(t.labelCountry && el('label-country')) el('label-country').innerText = t.labelCountry;
-    if(t.labelOccupation && el('label-occupation')) el('label-occupation').innerText = t.labelOccupation;
-    if(t.labelGender && el('label-gender')) el('label-gender').innerText = t.labelGender;
-    if(t.labelIncomeType && el('label-income-type')) el('label-income-type').innerText = t.labelIncomeType;
-    if(t.labelAmount && el('label-amount')) el('label-amount').innerText = t.labelAmount;
-    if(t.btnSubmit && el('btn-submit')) el('btn-submit').innerText = t.btnSubmit;
-    
-    if(t.adTitle && el('ad-title')) el('ad-title').innerText = t.adTitle;
-    if(t.countdownText && el('countdown-text')) el('countdown-text').innerText = t.countdownText;
-    
-    if(t.resultTitle && el('result-title')) el('result-title').innerText = t.resultTitle;
-    if(t.resLocalJob && el('res-local-job')) el('res-local-job').innerText = t.resLocalJob;
-    if(t.resGlobalJob && el('res-global-job')) el('res-global-job').innerText = t.resGlobalJob;
-    if(t.resLocalAll && el('res-local-all')) el('res-local-all').innerText = t.resLocalAll;
-    if(t.resGlobalAll && el('res-global-all')) el('res-global-all').innerText = t.resGlobalAll;
-    
-    if(t.btnRecalculate && el('btn-recalculate')) el('btn-recalculate').innerText = t.btnRecalculate;
+    if (t.title && el('title-text')) el('title-text').innerText = t.title;
+    if (t.subtitle && el('subtitle-text')) el('subtitle-text').innerText = t.subtitle;
+    if (t.labelCountry && el('label-country')) el('label-country').innerText = t.labelCountry;
+    if (t.labelOccupation && el('label-occupation')) el('label-occupation').innerText = t.labelOccupation;
+    if (t.labelJobLevel && el('label-job-level')) el('label-job-level').innerText = t.labelJobLevel;
+    if (t.labelGender && el('label-gender')) el('label-gender').innerText = t.labelGender;
+    if (t.labelIncomeType && el('label-income-type')) el('label-income-type').innerText = t.labelIncomeType;
+    if (t.labelAmount && el('label-amount')) el('label-amount').innerText = t.labelAmount;
+    if (t.btnSubmit && el('btn-submit')) el('btn-submit').innerText = t.btnSubmit;
+
+    if (t.adTitle && el('ad-title')) el('ad-title').innerText = t.adTitle;
+    if (t.countdownText && el('countdown-text')) el('countdown-text').innerText = t.countdownText;
+
+    if (t.resultTitle && el('result-title')) el('result-title').innerText = t.resultTitle;
+    if (t.resLocalJob && el('res-local-job')) el('res-local-job').innerText = t.resLocalJob;
+    if (t.resGlobalJob && el('res-global-job')) el('res-global-job').innerText = t.resGlobalJob;
+    if (t.resLocalAll && el('res-local-all')) el('res-local-all').innerText = t.resLocalAll;
+    if (t.resGlobalAll && el('res-global-all')) el('res-global-all').innerText = t.resGlobalAll;
+
+    if (t.btnRecalculate && el('btn-recalculate')) el('btn-recalculate').innerText = t.btnRecalculate;
+    if (t.btnShare && el('btn-share')) el('btn-share').innerHTML = t.btnShare;
+
+    // Update SEO & FAQ Section
+    if (t.seoTitle && el('seo-title')) el('seo-title').innerHTML = t.seoTitle;
+    if (t.seoQ1 && el('seo-q1')) el('seo-q1').innerHTML = t.seoQ1;
+    if (t.seoA1 && el('seo-a1')) el('seo-a1').innerHTML = t.seoA1;
+    if (t.seoQ2 && el('seo-q2')) el('seo-q2').innerHTML = t.seoQ2;
+    if (t.seoA2 && el('seo-a2')) el('seo-a2').innerHTML = t.seoA2;
+    if (t.seoQ3 && el('seo-q3')) el('seo-q3').innerHTML = t.seoQ3;
+    if (t.seoA3 && el('seo-a3')) el('seo-a3').innerHTML = t.seoA3;
+    if (t.seoFaqTitle && el('seo-faq-title')) el('seo-faq-title').innerHTML = t.seoFaqTitle;
+    if (t.seoFaqQ1 && el('seo-faq-q1')) el('seo-faq-q1').innerHTML = t.seoFaqQ1;
+    if (t.seoFaqQ2 && el('seo-faq-q2')) el('seo-faq-q2').innerHTML = t.seoFaqQ2;
+    if (t.seoFaqQ3 && el('seo-faq-q3')) el('seo-faq-q3').innerHTML = t.seoFaqQ3;
 
     // Re-generate analysis texts if results are showing
     if (!el('result-section').classList.contains('hidden')) {
@@ -541,7 +688,7 @@ function changeLanguage() {
 
     // Update Dropdowns texts
     updateStaticDropdowns(lang);
-    initDropdowns(); 
+    initDropdowns();
     updateMedCategory();
 }
 
@@ -550,13 +697,13 @@ function initDropdowns() {
     const lang = el('language').value || 'ko';
     const largeSel = el('occupation-large');
     const curVal = largeSel.value;
-    const promptMap = {ko:"대분류 선택", en:"Select Category", zh:"选择分类"};
-    
+    const promptMap = { ko: "대분류 선택", en: "Select Category", zh: "选择分类" };
+
     largeSel.innerHTML = `<option value="">${promptMap[lang] || promptMap['en'] || "Select"}</option>`;
     for (let key in occupationData) {
         largeSel.innerHTML += `<option value="${key}">${getT(occupationData[key].name, lang)}</option>`;
     }
-    if(curVal) largeSel.value = curVal;
+    if (curVal) largeSel.value = curVal;
 }
 
 function updateMedCategory() {
@@ -564,24 +711,24 @@ function updateMedCategory() {
     const largeVal = el('occupation-large').value;
     const medSel = el('occupation-med');
     const smallSel = el('occupation-small');
-    const promptMap = {ko:"중분류 선택", en:"Select Sub-category", zh:"选择子分类"};
-    
+    const promptMap = { ko: "중분류 선택", en: "Select Sub-category", zh: "选择子分类" };
+
     if (!largeVal) {
         medSel.style.display = 'none';
         smallSel.style.display = 'none';
         return;
     }
-    
+
     const curVal = medSel.value;
     medSel.style.display = 'block';
     medSel.innerHTML = `<option value="">${promptMap[lang] || promptMap['en'] || "Select"}</option>`;
-    
+
     const medData = occupationData[largeVal].med;
     for (let key in medData) {
         medSel.innerHTML += `<option value="${key}">${getT(medData[key].name, lang)}</option>`;
     }
-    if(curVal && medData[curVal]) medSel.value = curVal;
-    
+    if (curVal && medData[curVal]) medSel.value = curVal;
+
     updateSmallCategory();
 }
 
@@ -590,37 +737,37 @@ function updateSmallCategory() {
     const largeVal = el('occupation-large').value;
     const medVal = el('occupation-med').value;
     const smallSel = el('occupation-small');
-    const promptMap = {ko:"소분류 선택", en:"Select Specific Job", zh:"选择具体职业"};
-    
+    const promptMap = { ko: "소분류 선택", en: "Select Specific Job", zh: "选择具体职业" };
+
     if (!largeVal || !medVal || !occupationData[largeVal].med[medVal]) {
         smallSel.style.display = 'none';
         return;
     }
-    
+
     const curVal = smallSel.value;
     smallSel.style.display = 'block';
     smallSel.innerHTML = `<option value="">${promptMap[lang] || promptMap['en'] || "Select"}</option>`;
-    
+
     const smallData = occupationData[largeVal].med[medVal].small;
     for (let key in smallData) {
         smallSel.innerHTML += `<option value="${key}">${getT(smallData[key], lang)}</option>`;
     }
-    if(curVal && smallData[curVal]) smallSel.value = curVal;
+    if (curVal && smallData[curVal]) smallSel.value = curVal;
 }
 
 initDropdowns();
 
 // Form Submit
-el('calculator-form').addEventListener('submit', function(e) {
+el('calculator-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     // Hide form immediately
     el('form-section').classList.remove('active');
-    
+
     const lang = el('language').value || 'ko';
-    
+
     // Trigger Ad Overlay
-    AdManager.showAd(lang, function() {
+    AdManager.showAd(lang, function () {
         showResults();
     });
 });
@@ -633,43 +780,57 @@ function showResults() {
         oldAdSection.classList.remove('active');
         oldAdSection.classList.add('hidden');
     }
-    
+
     el('result-section').classList.add('active');
     el('result-section').classList.remove('hidden');
-    
+
+    // Fix browser scroll anchoring pushing the view down
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 10);
+
     const amount = parseFloat(el('amount').value) || 0;
     const country = el('country').value;
     const incomeType = el('income-type').value;
-    
+
     // Normalize to Yearly Local Currency
     let multiplier = 1;
     if (incomeType === 'hourly') multiplier = 2080;
     if (incomeType === 'weekly') multiplier = 52;
     if (incomeType === 'monthly') multiplier = 12;
-    
+
     let localYearly = amount * multiplier;
-    
+
     // Convert to USD using the currencyMap
     const rate = currencyMap[country] ? currencyMap[country].rateToUsd : 1;
     let baseYearlyUsd = localYearly * rate;
-    
+
     // Core logic: Calculate percentile based on normal distribution approximation
     // Mean global income ~$10,000, SD ~$20,000
     // Very simple heuristic to map income to percentile:
     let baseRank = 100 - Math.min(99.9, (Math.log10(baseYearlyUsd || 1) / Math.log10(1000000)) * 100);
     if (baseRank < 0.01) baseRank = 0.01;
     if (isNaN(baseRank) || baseRank > 99) baseRank = 99.9;
-    
-    const localJob = Math.max(0.01, (baseRank * 0.8)).toFixed(2);
-    const globalJob = Math.max(0.01, (baseRank * 0.4)).toFixed(2);
-    const localAll = Math.max(0.01, (baseRank)).toFixed(2);
-    const globalAll = Math.max(0.01, (baseRank * 0.5)).toFixed(2);
-    
+
+    const jobLevel = el('job-level') ? el('job-level').value : 'all';
+
+    // Job Level Modifier for Same Job comparisons
+    let jobModifier = 1.0;
+    if (jobLevel === 'entry') jobModifier = 0.7; // Entry level: making same amount is comparatively higher rank
+    else if (jobLevel === 'mid') jobModifier = 0.9;
+    else if (jobLevel === 'senior') jobModifier = 1.2;
+    else if (jobLevel === 'exec') jobModifier = 1.5;
+
+    const localJob = Math.max(0.01, Math.min(99.9, (baseRank * 0.8 * jobModifier))).toFixed(2);
+    const globalJob = Math.max(0.01, Math.min(99.9, (baseRank * 0.4 * jobModifier))).toFixed(2);
+    const localAll = Math.max(0.01, Math.min(99.9, baseRank)).toFixed(2);
+    const globalAll = Math.max(0.01, Math.min(99.9, (baseRank * 0.5))).toFixed(2);
+
     el('val-local-job').dataset.target = localJob;
     el('val-global-job').dataset.target = globalJob;
     el('val-local-all').dataset.target = localAll;
     el('val-global-all').dataset.target = globalAll;
-    
+
     // Animate bars and countdown numbers
     setTimeout(() => {
         animateChart('bar-local-job', 'val-local-job', 'label-local-job', localJob);
@@ -677,7 +838,7 @@ function showResults() {
         animateChart('bar-local-all', 'val-local-all', 'label-local-all', localAll);
         animateChart('bar-global-all', 'val-global-all', 'label-global-all', globalAll);
     }, 100);
-    
+
     updateAnalysisTexts(el('language').value);
 }
 
@@ -685,31 +846,31 @@ function animateChart(barId, valId, labelId, targetPercent) {
     const barEl = el(barId);
     const valEl = el(valId);
     const labelEl = el(labelId);
-    
+
     if (labelEl) labelEl.classList.add('active');
-    
+
     const duration = 1500; // 1.5 seconds
     const startNum = 100;
     const endNum = parseFloat(targetPercent);
     // Scale max height to 85% so the label never crosses the top line
     const targetHeight = (100 - endNum) * 0.85;
-    
+
     const startTime = performance.now();
-    
+
     function step(currentTime) {
         let elapsed = currentTime - startTime;
         let progress = Math.min(elapsed / duration, 1);
-        
+
         // Easing function (cubic-bezier out)
         let easeProgress = 1 - Math.pow(1 - progress, 3);
-        
+
         let currentNum = startNum - ((startNum - endNum) * easeProgress);
         let currentHeight = targetHeight * easeProgress;
-        
+
         if (valEl) valEl.innerText = currentNum.toFixed(2);
         if (barEl) barEl.style.height = currentHeight + '%';
         if (labelEl) labelEl.style.bottom = currentHeight + '%';
-        
+
         if (progress < 1) {
             requestAnimationFrame(step);
         } else {
@@ -718,9 +879,9 @@ function animateChart(barId, valId, labelId, targetPercent) {
             if (labelEl) labelEl.style.bottom = targetHeight + '%';
         }
     }
-    
+
     requestAnimationFrame(step);
-    
+
     updateAnalysisTexts(el('language').value);
 }
 
@@ -738,7 +899,7 @@ function getJobPrevalenceRatio(jobKey) {
 
 function updateAnalysisTexts(lang) {
     const t = translations[lang] || translations['en'];
-    
+
     // Demographic calculations
     const globalPop = 3481248157;
     const countryKey = el('country').value;
@@ -748,8 +909,8 @@ function updateAnalysisTexts(lang) {
 
     const jobSelect = el('occupation-small');
     const jobNameRaw = jobSelect.options[jobSelect.selectedIndex].text;
-    const jobName = jobNameRaw.split(' (')[0]; 
-    
+    const jobName = jobNameRaw.split(' (')[0];
+
     const renderCat = (template, job, fallback) => template ? template.replace('{job}', job) : fallback;
     const catLocalJob = renderCat(t.catLocalJob, jobName, `${jobName} (Local)`);
     const catGlobalJob = renderCat(t.catGlobalJob, jobName, `${jobName} (Global)`);
@@ -760,14 +921,14 @@ function updateAnalysisTexts(lang) {
     const globalJobTotal = Math.floor(globalPop * jobRatio);
     const localAllTotal = localPop;
     const globalAllTotal = globalPop;
-    
+
     const applyAnalysis = (valId, analysisId, titleId, totalPop, categoryName, index) => {
         const valEl = el(valId);
         const rankStr = valEl.dataset.target || valEl.innerText;
         if (!rankStr) return;
         const rank = parseFloat(rankStr);
         let textTemplate = "";
-        
+
         if (rank <= 20) {
             textTemplate = Array.isArray(t.analysisTop) ? t.analysisTop[index] : t.analysisTop;
         } else if (rank <= 60) {
@@ -775,17 +936,17 @@ function updateAnalysisTexts(lang) {
         } else {
             textTemplate = Array.isArray(t.analysisBottom) ? t.analysisBottom[index] : t.analysisBottom;
         }
-        
+
         let rankNum = Math.floor(totalPop * (rank / 100));
         if (rankNum < 1) rankNum = 1;
-        
+
         // Replace variables
         let finalHtml = textTemplate
             .replace('{rank}', `<span class="text-gold">${rank}</span>`)
             .replace('{category}', categoryName)
             .replace('{total}', totalPop.toLocaleString())
             .replace('{rankNum}', `<span class="text-blue">${rankNum.toLocaleString()}</span>`);
-        
+
         // Add some glowing effect or color variations based on rank
         if (rank <= 20) {
             finalHtml = `<span class="text-gold" style="font-size:1.1rem; text-shadow: 0 0 5px rgba(255,215,0,0.5);"></span>` + finalHtml;
@@ -794,9 +955,9 @@ function updateAnalysisTexts(lang) {
         } else {
             finalHtml = `<span style="color:#aaa;"></span>` + finalHtml;
         }
-        
+
         el(analysisId).innerHTML = finalHtml;
-        if(el(titleId)) {
+        if (el(titleId)) {
             el(titleId).innerText = categoryName;
         }
     };
@@ -811,12 +972,12 @@ function updateAnalysisTexts(lang) {
 function resetForm() {
     el('result-section').classList.remove('active');
     el('result-section').classList.add('hidden');
-    
+
     el('form-section').classList.add('active');
     el('form-section').classList.remove('hidden');
-    
+
     el('amount').value = '';
-    
+
     // Reset bar heights and labels
     ['local-job', 'global-job', 'local-all', 'global-all'].forEach(key => {
         el(`bar-${key}`).style.height = '0%';
@@ -831,4 +992,100 @@ function resetForm() {
 el('country').addEventListener('change', updateCurrencyLabel);
 
 // Initial language set
+const urlParams = new URLSearchParams(window.location.search);
+const langParam = urlParams.get('lang');
+if (langParam && translations[langParam]) {
+    el('language').value = langParam;
+    // Clean up URL without refreshing
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
 changeLanguage();
+
+async function shareResult() {
+    const shareBtn = el('btn-share');
+    const originalText = shareBtn.innerHTML;
+    shareBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 캡처 중...';
+    shareBtn.disabled = true;
+
+    try {
+        const resultSection = el('result-section');
+
+        // Hide the buttons momentarily for a clean screenshot
+        el('btn-recalculate').style.display = 'none';
+        shareBtn.style.display = 'none';
+
+        const canvas = await html2canvas(resultSection, {
+            backgroundColor: '#0a0b10', // Dark theme background
+            scale: 2, // High resolution
+            logging: false,
+            useCORS: true
+        });
+
+        // Restore buttons
+        el('btn-recalculate').style.display = 'block';
+        shareBtn.style.display = 'block';
+
+        canvas.toBlob(async (blob) => {
+            const file = new File([blob], 'income_ranking.png', { type: 'image/png' });
+            // Use language-specific URL for correct OG image
+            const currentLang = el('language').value || 'ko';
+            let baseUrl = window.location.origin + window.location.pathname;
+            if (baseUrl.endsWith('index.html')) {
+                baseUrl = baseUrl.replace('index.html', '');
+            } else if (!baseUrl.endsWith('/')) {
+                baseUrl += '/';
+            }
+            const shareUrl = baseUrl + currentLang + '.html';
+
+            const shareData = {
+                title: '내 소득 랭킹 결과',
+                text: '내 소득랭킹 확인하기',
+                url: shareUrl,
+            };
+
+            // If browser supports sharing files (mobile mostly)
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                shareData.files = [file];
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.error('Share failed:', err);
+                }
+            } else {
+                // Fallback for PC/Unsupported browsers: Download the image and try sharing text
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'income_ranking_result.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+
+                // Fallback share text if possible
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: shareData.title,
+                            text: shareData.text,
+                            url: shareData.url
+                        });
+                    } catch (err) {
+                        console.error('Fallback text share failed:', err);
+                    }
+                } else {
+                    alert('결과 이미지가 기기에 저장되었습니다! 갤러리나 다운로드 폴더를 확인하시고 메신저로 공유해 보세요.\n\n내 소득랭킹 확인하기 URL: ' + shareData.url);
+                }
+            }
+        }, 'image/png');
+
+    } catch (err) {
+        console.error('Screenshot error:', err);
+        alert('화면 캡처 중 오류가 발생했습니다.');
+        el('btn-recalculate').style.display = 'block';
+        shareBtn.style.display = 'block';
+    } finally {
+        shareBtn.innerHTML = originalText;
+        shareBtn.disabled = false;
+    }
+}
