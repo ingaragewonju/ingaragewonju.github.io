@@ -19,67 +19,78 @@ const translations = {
             "🌈 세계는 넓고 기회는 끝이 없습니다. [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)이지만, 이는 크게 도약하기 위한 단단한 발판이 될 것입니다. 당신의 밝은 미래를 진심으로 응원합니다!",
             "✨ 위대한 성공은 모두 작은 발걸음에서 시작됩니다. [{category}] 약 {total}명 중 {rankNum}등(상위 {rank}%)입니다. 남들과 비교하기보다 어제보다 나아진 자신을 믿으세요. 위안과 따뜻한 격려를 보냅니다!",
             "🌻 상위 {rank}%. [{category}] 약 {total}명 중 {rankNum}등입니다. 지금 당장은 아쉬울 수 있어도, 당신이 품은 가능성은 무한합니다. 묵묵히 이겨내는 당신은 이미 충분히 멋진 사람입니다!"
-        ]
+        ],
+        catLocalJob: "{job} (국내)", catGlobalJob: "{job} (세계)", catLocalAll: "모든직종 (국내)", catGlobalAll: "모든직종 (세계)"
     },
     en: {
         title: "My Income Rank?", subtitle: "Discover where you stand globally and locally.", labelCountry: "Country", labelOccupation: "Occupation", labelGender: "Gender", labelIncomeType: "Income Type", labelAmount: "Amount", btnSubmit: "Check My Rank", adTitle: "Deep searching global portals...", countdownText: "Results in", resultTitle: "Your Ranking Results", resLocalJob: "Same Job (Local)", resGlobalJob: "Same Job (Global)", resLocalAll: "All Jobs (Local)", resGlobalAll: "All Jobs (Global)", btnRecalculate: "Recalculate", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Absolutely amazing. In [{category}], out of approx {total} people, you rank around {rankNum}. Your effort and skills put you at the top!",
         analysisMiddle: "Top {rank}%. You are in a stable position. In [{category}], out of approx {total} people, you rank around {rankNum}. Keep going to reach higher!",
-        analysisBottom: "Top {rank}%. Not bad at all! In [{category}], out of approx {total} people, you rank around {rankNum}. A little more effort will bring a huge leap!"
+        analysisBottom: "Top {rank}%. Not bad at all! In [{category}], out of approx {total} people, you rank around {rankNum}. A little more effort will bring a huge leap!",
+        catLocalJob: "{job} in Your Country", catGlobalJob: "{job} Worldwide", catLocalAll: "All Professions in Your Country", catGlobalAll: "All Professions Worldwide"
     },
     es: {
         title: "¿Mi rango de ingresos?", subtitle: "Descubre tu posición mundial y local.", labelCountry: "País", labelOccupation: "Ocupación", labelGender: "Género", labelIncomeType: "Tipo de ingresos", labelAmount: "Cantidad", btnSubmit: "Comprobar mi rango", adTitle: "Buscando datos globales...", countdownText: "Resultados en", resultTitle: "Resultados", resLocalJob: "Mismo Trabajo (Local)", resGlobalJob: "Mismo Trabajo (Mundial)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Mundial)", btnRecalculate: "Recalcular", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "¡Top {rank}%! Increíble. En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Eres el mejor!",
         analysisMiddle: "Top {rank}%. Posición estable. En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Sigue adelante!",
-        analysisBottom: "Top {rank}%. ¡Nada mal! En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Te apoyamos!"
+        analysisBottom: "Top {rank}%. ¡Nada mal! En [{category}], de aprox. {total} personas, eres el número {rankNum}. ¡Te apoyamos!",
+        catLocalJob: "{job} en tu país", catGlobalJob: "{job} a nivel mundial", catLocalAll: "Todas las profesiones en tu país", catGlobalAll: "Todas las profesiones a nivel mundial"
     },
     zh: {
         title: "我的收入排名？", subtitle: "探索您在全球和本地的地位。", labelCountry: "国家", labelOccupation: "职业", labelGender: "性别", labelIncomeType: "收入类型", labelAmount: "金额", btnSubmit: "查看排名", adTitle: "深度搜索全球门户...", countdownText: "结果还有", resultTitle: "您的排名结果", resLocalJob: "同行 (国内)", resGlobalJob: "同行 (全球)", resLocalAll: "所有行业 (国内)", resGlobalAll: "所有行业 (全球)", btnRecalculate: "重新计算", prefixTop: "前 ", suffixPercent: "%",
         analysisTop: "前 {rank}%！太棒了。在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。您的实力证明您处于顶尖水平！",
         analysisMiddle: "前 {rank}%。位置稳定。在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。继续前进，干得好！",
-        analysisBottom: "前 {rank}%。现在的位置也不错！在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。再努力一点就能有巨大飞跃！"
+        analysisBottom: "前 {rank}%。现在的位置也不错！在 [{category}] 中，约 {total} 人里您排名第 {rankNum}。再努力一点就能有巨大飞跃！",
+        catLocalJob: "国内 {job}", catGlobalJob: "全球 {job}", catLocalAll: "国内所有职业", catGlobalAll: "全球所有职业"
     },
     ja: {
         title: "私の収入ランクは？", subtitle: "世界と自国での位置を確認しましょう。", labelCountry: "国", labelOccupation: "職種", labelGender: "性別", labelIncomeType: "給与基準", labelAmount: "金額", btnSubmit: "ランクを確認", adTitle: "データを分析中...", countdownText: "結果まで", resultTitle: "ランキング結果", resLocalJob: "同職種 (国内)", resGlobalJob: "同職種 (世界)", resLocalAll: "全職種 (国内)", resGlobalAll: "全職種 (世界)", btnRecalculate: "再計算", prefixTop: "上位 ", suffixPercent: "%",
         analysisTop: "上位 {rank}%！本当に素晴らしいです。[{category}]の約 {total}人中、あなたはおよそ {rankNum}位です。最高です！",
         analysisMiddle: "上位 {rank}%。安定した位置です。[{category}]の約 {total}人中、およそ {rankNum}位です。さらに上を目指しましょう！",
-        analysisBottom: "上位 {rank}%。現在の位置も悪くありません！[{category}]の約 {total}人中、およそ {rankNum}位です。応援しています！"
+        analysisBottom: "上位 {rank}%。現在の位置も悪くありません！[{category}]の約 {total}人中、およそ {rankNum}位です。応援しています！",
+        catLocalJob: "国内の {job}", catGlobalJob: "世界の {job}", catLocalAll: "国内のすべての職種", catGlobalAll: "世界のすべての職種"
     },
     hi: {
         title: "मेरी आय रैंक?", subtitle: "विश्व और स्थानीय स्तर पर अपनी स्थिति जानें।", labelCountry: "देश", labelOccupation: "पेशा", labelGender: "लिंग", labelIncomeType: "आय का प्रकार", labelAmount: "रकम", btnSubmit: "रैंक जांचें", adTitle: "पोर्टल्स खोज रहे हैं...", countdownText: "परिणाम इसमें", resultTitle: "रैंकिंग परिणाम", resLocalJob: "समान नौकरी (स्थानीय)", resGlobalJob: "समान नौकरी (वैश्विक)", resLocalAll: "सभी (स्थानीय)", resGlobalAll: "सभी (वैश्विक)", btnRecalculate: "पुनर्गणना करें", prefixTop: "शीर्ष ", suffixPercent: "%",
         analysisTop: "शीर्ष {rank}%! बिल्कुल अद्भुत। [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। आप सर्वश्रेष्ठ हैं!",
         analysisMiddle: "शीर्ष {rank}%. स्थिर स्थिति। [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। आगे बढ़ते रहें!",
-        analysisBottom: "शीर्ष {rank}%. बुरा नहीं है! [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। हम आपके साथ हैं!"
+        analysisBottom: "शीर्ष {rank}%. बुरा नहीं है! [{category}] में लगभग {total} में से आपकी रैंक {rankNum} है। हम आपके साथ हैं!",
+        catLocalJob: "आपके देश में {job}", catGlobalJob: "दुनिया भर में {job}", catLocalAll: "आपके देश में सभी पेशे", catGlobalAll: "दुनिया भर में सभी पेशे"
     },
     ar: {
         title: "ترتيب الدخل الخاص بي؟", subtitle: "اكتشف موقعك عالمياً ومحلياً.", labelCountry: "دولة", labelOccupation: "مهنة", labelGender: "جنس", labelIncomeType: "نوع الدخل", labelAmount: "كمية", btnSubmit: "التحقق", adTitle: "يتم تحليل البيانات...", countdownText: "النتائج في", resultTitle: "نتائج الترتيب", resLocalJob: "نفس الوظيفة (محلي)", resGlobalJob: "نفس الوظيفة (عالمي)", resLocalAll: "الكل (محلي)", resGlobalAll: "الكل (عالمي)", btnRecalculate: "إعادة حساب", prefixTop: "أعلى ", suffixPercent: "%",
         analysisTop: "أعلى {rank}%! مذهل. في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. أنت الأفضل!",
         analysisMiddle: "أعلى {rank}%. موقع مستقر. في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. استمر!",
-        analysisBottom: "أعلى {rank}%. ليس سيئًا! في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. نحن ندعمك!"
+        analysisBottom: "أعلى {rank}%. ليس سيئًا! في [{category}] من حوالي {total} شخص، ترتيبك هو {rankNum}. نحن ندعمك!",
+        catLocalJob: "{job} في بلدك", catGlobalJob: "{job} حول العالم", catLocalAll: "جميع المهن في بلدك", catGlobalAll: "جميع المهن حول العالم"
     },
     fr: {
         title: "Mon classement de revenus ?", subtitle: "Découvrez votre position mondiale et locale.", labelCountry: "Pays", labelOccupation: "Profession", labelGender: "Genre", labelIncomeType: "Type de revenu", labelAmount: "Montant", btnSubmit: "Vérifier", adTitle: "Analyse des portails...", countdownText: "Résultats dans", resultTitle: "Vos résultats", resLocalJob: "Même travail (Local)", resGlobalJob: "Même travail (Mondial)", resLocalAll: "Tous (Local)", resGlobalAll: "Tous (Mondial)", btnRecalculate: "Recalculer", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}% ! Incroyable. Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Vous êtes le meilleur !",
         analysisMiddle: "Top {rank}%. Position stable. Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Continuez !",
-        analysisBottom: "Top {rank}%. Pas mal ! Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Un petit effort de plus !"
+        analysisBottom: "Top {rank}%. Pas mal ! Dans [{category}], sur env. {total} personnes, vous êtes {rankNum}e. Un petit effort de plus !",
+        catLocalJob: "{job} dans votre pays", catGlobalJob: "{job} dans le monde", catLocalAll: "Toutes les professions dans votre pays", catGlobalAll: "Toutes les professions dans le monde"
     },
     ru: {
         title: "Мой рейтинг доходов?", subtitle: "Узнайте свое положение.", labelCountry: "Страна", labelOccupation: "Профессия", labelGender: "Пол", labelIncomeType: "Тип дохода", labelAmount: "Сумма", btnSubmit: "Проверить", adTitle: "Поиск по порталам...", countdownText: "Результаты через", resultTitle: "Ваши результаты", resLocalJob: "Та же работа (Местно)", resGlobalJob: "Та же работа (В мире)", resLocalAll: "Все (Местно)", resGlobalAll: "Все (В мире)", btnRecalculate: "Пересчитать", prefixTop: "Топ ", suffixPercent: "%",
         analysisTop: "Топ {rank}%! Потрясающе. В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Вы лучший!",
         analysisMiddle: "Топ {rank}%. Стабильно. В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Продолжайте!",
-        analysisBottom: "Топ {rank}%. Неплохо! В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Мы болеем за вас!"
+        analysisBottom: "Топ {rank}%. Неплохо! В [{category}] из прибл. {total} человек вы занимаете {rankNum} место. Мы болеем за вас!",
+        catLocalJob: "{job} в вашей стране", catGlobalJob: "{job} в мире", catLocalAll: "Все профессии в вашей стране", catGlobalAll: "Все профессии в мире"
     },
     pt: {
         title: "Minha classificação de renda?", subtitle: "Descubra sua posição global e local.", labelCountry: "País", labelOccupation: "Ocupação", labelGender: "Gênero", labelIncomeType: "Tipo de renda", labelAmount: "Valor", btnSubmit: "Verificar", adTitle: "Analisando portais globais...", countdownText: "Resultados em", resultTitle: "Resultados", resLocalJob: "Mesmo Trabalho (Local)", resGlobalJob: "Mesmo Trabalho (Global)", resLocalAll: "Todos (Local)", resGlobalAll: "Todos (Global)", btnRecalculate: "Recalcular", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Incrível. Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Você é o melhor!",
         analysisMiddle: "Top {rank}%. Posição estável. Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Continue assim!",
-        analysisBottom: "Top {rank}%. Nada mal! Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Estamos torcendo por você!"
+        analysisBottom: "Top {rank}%. Nada mal! Em [{category}], de aprox. {total} pessoas, você é o nº {rankNum}. Estamos torcendo por você!",
+        catLocalJob: "{job} no seu país", catGlobalJob: "{job} no mundo", catLocalAll: "Todas as profissões no seu país", catGlobalAll: "Todas as profissões no mundo"
     },
     de: {
         title: "Mein Einkommensrang?", subtitle: "Entdecken Sie Ihre Position.", labelCountry: "Land", labelOccupation: "Beruf", labelGender: "Geschlecht", labelIncomeType: "Einkommensart", labelAmount: "Betrag", btnSubmit: "Überprüfen", adTitle: "Analysiere Portale...", countdownText: "Ergebnisse in", resultTitle: "Ranking-Ergebnisse", resLocalJob: "Gleicher Job (Lokal)", resGlobalJob: "Gleicher Job (Global)", resLocalAll: "Alle (Lokal)", resGlobalAll: "Alle (Global)", btnRecalculate: "Neu berechnen", prefixTop: "Top ", suffixPercent: "%",
         analysisTop: "Top {rank}%! Erstaunlich. In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Sie sind der Beste!",
         analysisMiddle: "Top {rank}%. Stabile Position. In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Weiter so!",
-        analysisBottom: "Top {rank}%. Nicht schlecht! In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Wir feuern Sie an!"
+        analysisBottom: "Top {rank}%. Nicht schlecht! In [{category}], von ca. {total} Personen sind Sie auf Platz {rankNum}. Wir feuern Sie an!",
+        catLocalJob: "{job} in Ihrem Land", catGlobalJob: "{job} weltweit", catLocalAll: "Alle Berufe in Ihrem Land", catGlobalAll: "Alle Berufe weltweit"
     }
 };
 
@@ -739,15 +750,11 @@ function updateAnalysisTexts(lang) {
     const jobNameRaw = jobSelect.options[jobSelect.selectedIndex].text;
     const jobName = jobNameRaw.split(' (')[0]; 
     
-    const isKo = lang === 'ko';
-    const localSuffix = isKo ? '(국내)' : '(Local)';
-    const globalSuffix = isKo ? '(세계)' : '(Global)';
-    const allJobsTxt = isKo ? '모든직종' : 'All Jobs';
-    
-    const catLocalJob = `${jobName} ${localSuffix}`;
-    const catGlobalJob = `${jobName} ${globalSuffix}`;
-    const catLocalAll = `${allJobsTxt} ${localSuffix}`;
-    const catGlobalAll = `${allJobsTxt} ${globalSuffix}`;
+    const renderCat = (template, job, fallback) => template ? template.replace('{job}', job) : fallback;
+    const catLocalJob = renderCat(t.catLocalJob, jobName, `${jobName} (Local)`);
+    const catGlobalJob = renderCat(t.catGlobalJob, jobName, `${jobName} (Global)`);
+    const catLocalAll = t.catLocalAll || `All Jobs (Local)`;
+    const catGlobalAll = t.catGlobalAll || `All Jobs (Global)`;
 
     const localJobTotal = Math.floor(localPop * jobRatio);
     const globalJobTotal = Math.floor(globalPop * jobRatio);
