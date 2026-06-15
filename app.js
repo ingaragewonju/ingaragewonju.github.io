@@ -1052,30 +1052,26 @@ async function shareResult() {
                     console.error('Share failed:', err);
                 }
             } else {
-                // Fallback for PC/Unsupported browsers: Download the image and try sharing text
+                // Fallback for PC/Unsupported browsers: Show image modal instead of forced download
                 const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'income_ranking_result.png';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-
-                // Fallback share text if possible
-                if (navigator.share) {
-                    try {
-                        await navigator.share({
-                            title: shareData.title,
-                            text: shareData.text,
-                            url: shareData.url
-                        });
-                    } catch (err) {
-                        console.error('Fallback text share failed:', err);
-                    }
-                } else {
-                    alert('결과 이미지가 기기에 저장되었습니다! 갤러리나 다운로드 폴더를 확인하시고 메신저로 공유해 보세요.\n\n내 소득랭킹 확인하기 URL: ' + shareData.url);
-                }
+                const modal = document.getElementById('image-modal');
+                const preview = document.getElementById('fallback-image-preview');
+                const urlInput = document.getElementById('fallback-share-url');
+                
+                preview.src = url;
+                urlInput.value = shareData.url;
+                
+                // Show the modal
+                modal.classList.remove('ad-hidden');
+                modal.classList.remove('hidden');
+                modal.classList.add('active');
+                modal.style.display = 'flex';
+                
+                // Try copying URL to clipboard
+                try {
+                    navigator.clipboard.writeText(shareData.url);
+                    urlInput.value = "(복사완료!) " + shareData.url;
+                } catch(e) {}
             }
         }, 'image/png');
 

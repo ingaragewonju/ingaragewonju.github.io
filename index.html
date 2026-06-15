@@ -12,6 +12,7 @@
     <meta property="og:title" content="소득랭킹계산기 | 내 소득은 몇 등??">
     <meta property="og:description" content="전 세계 10개국 언어 지원. 내 직종에서 나의 소득이 상위 몇 %인지 지금 바로 확인하세요!">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ingaragewonju.github.io/assets/og_ko.png">
     <link rel="stylesheet" href="styles.css?v=19">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <!-- FontAwesome for Wealth Icons -->
@@ -243,7 +244,21 @@
             </ul>
         </section>
     </div>
-    <script src="app.js?v=24"></script>
+
+    <!-- Image Fallback Modal for Sharing -->
+    <div id="image-modal" class="ad-hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 20px;">
+        <div style="background: var(--glass-bg); padding: 20px; border-radius: 12px; text-align: center; max-width: 90vw;">
+            <h3 style="color: var(--gold); margin-bottom: 10px;">이미지 길게 누르기</h3>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">현재 브라우저는 직접 공유를 지원하지 않습니다.<br>아래 <strong>이미지를 꾹 눌러 저장</strong>한 뒤 메신저에 공유해 보세요!</p>
+            <img id="fallback-image-preview" src="" alt="결과 이미지" style="max-width: 100%; max-height: 60vh; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+            <div style="margin-top: 20px;">
+                <input type="text" id="fallback-share-url" readonly style="width: 100%; padding: 10px; border-radius: 5px; border: none; background: rgba(0,0,0,0.5); color: #fff; margin-bottom: 10px; text-align: center;">
+                <button onclick="document.getElementById('image-modal').style.display = 'none';" class="btn-secondary" style="width: 100%;">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=25"></script>
 </body>
 
 </html>
