@@ -229,10 +229,10 @@ const uiData = {
         { val: 'female', txt: { ko: '여성 (Female)', en: 'Female', es: 'Femenino', zh: '女性', ja: '女性', hi: 'महिला', ar: 'أنثى', fr: 'Femme', ru: 'Женский', pt: 'Feminino', de: 'Weiblich' } }
     ],
     incomeType: [
-        { val: 'hourly', txt: { ko: '시급', en: 'Hourly', es: 'Por hora', zh: '时薪', ja: '時給', hi: 'प्रति घंटा', ar: 'بالساعة', fr: 'Horaire', ru: 'Почасовая', pt: 'Por hora', de: 'Stündlich' } },
-        { val: 'weekly', txt: { ko: '주급', en: 'Weekly', es: 'Semanal', zh: '周薪', ja: '週給', hi: 'साप्ताहिक', ar: 'أسبوعي', fr: 'Hebdomadaire', ru: 'Еженедельно', pt: 'Semanal', de: 'Wöchentlich' } },
-        { val: 'monthly', txt: { ko: '월급', en: 'Monthly', es: 'Mensual', zh: '月薪', ja: '月給', hi: 'मासिक', ar: 'شهري', fr: 'Mensuel', ru: 'Ежемесячно', pt: 'Mensal', de: 'Monatlich' } },
-        { val: 'yearly', txt: { ko: '연봉', en: 'Yearly', es: 'Anual', zh: '年薪', ja: '年収', hi: 'वार्षिक', ar: 'سنوي', fr: 'Annuel', ru: 'Ежегодно', pt: 'Anual', de: 'Jährlich' } }
+        { val: 'hourly', txt: { ko: '시급 (세후)', en: 'Hourly (Net)', es: 'Por hora (Neto)', zh: '时薪 (税后)', ja: '時給 (手取り)', hi: 'प्रति घंटा (शुद्ध)', ar: 'بالساعة (الصافي)', fr: 'Horaire (Net)', ru: 'Почасовая (чистыми)', pt: 'Por hora (Líquido)', de: 'Stündlich (Netto)' } },
+        { val: 'weekly', txt: { ko: '주급 (세후)', en: 'Weekly (Net)', es: 'Semanal (Neto)', zh: '周薪 (税后)', ja: '週給 (手取り)', hi: 'साप्ताहिक (शुद्ध)', ar: 'أسبوعي (الصافي)', fr: 'Hebdomadaire (Net)', ru: 'Еженедельно (чистыми)', pt: 'Semanal (Líquido)', de: 'Wöchentlich (Netto)' } },
+        { val: 'monthly', txt: { ko: '월급 (세후)', en: 'Monthly (Net)', es: 'Mensual (Neto)', zh: '月薪 (税后)', ja: '月給 (手取り)', hi: 'मासिक (शुद्ध)', ar: 'شهري (الصافي)', fr: 'Mensuel (Net)', ru: 'Ежемесячно (чистыми)', pt: 'Mensal (Líquido)', de: 'Monatlich (Netto)' } },
+        { val: 'yearly', txt: { ko: '연봉 (세전)', en: 'Yearly (Gross)', es: 'Anual (Bruto)', zh: '年薪 (税前)', ja: '年収 (額面)', hi: 'वार्षिक (सकल)', ar: 'سنوي (الإجمالي)', fr: 'Annuel (Brut)', ru: 'Ежегодно (грязными)', pt: 'Anual (Bruto)', de: 'Jährlich (Brutto)' } }
     ],
     country: [
         { val: 'cn', txt: { ko: '중국 (China)', en: 'China', zh: '中国' } },
@@ -384,6 +384,15 @@ function getT(text, lang) {
         "바리스타": { en: "Barista", zh: "咖啡师", es: "Barista", ja: "バリスタ", fr: "Barista", de: "Barista", pt: "Barista", ru: "Бариста", ar: "باريستا", hi: "बरिस्ता" },
         "매니저/점장": { en: "Store Manager", zh: "店长", es: "Gerente de Tienda", ja: "店長/マネージャー", fr: "Gérant de Magasin", de: "Filialleiter", pt: "Gerente de Loja", ru: "Менеджер магазина", ar: "مدير متجر", hi: "स्टोर प्रबंधक" },
         "서빙/알바": { en: "Server/Part-time", zh: "服务员", es: "Camarero", ja: "接客/アルバイト", fr: "Serveur", de: "Kellner", pt: "Garçom", ru: "Официант", ar: "نادل", hi: "सर्वर" },
+        "편의점 알바": { en: "Convenience Store Part-time", zh: "便利店兼职", es: "A tiempo parcial en tienda de conveniencia", ja: "コンビニバイト", fr: "Temps partiel en dépanneur", de: "Teilzeit im Convenience Store", pt: "Meio período em loja de conveniência", ru: "Работа в магазине", ar: "دوام جزئي في متجر صغير", hi: "सुविधा स्टोर पार्ट-टाइम" },
+        "PC방/노래방 알바": { en: "PC Cafe/Karaoke Part-time", zh: "网吧/KTV兼职", es: "Cibercafé/Karaoke A tiempo parcial", ja: "ネットカフェ/カラオケバイト", fr: "Cybercafé/Karaoké Temps partiel", de: "PC-Café/Karaoke Teilzeit", pt: "Lan house/Karaokê Meio período", ru: "Интернет-кафе/Караоке", ar: "مقهى إنترنت / كاريوكي", hi: "पीसी कैफे/कराओके पार्ट-टाइम" },
+        "패스트푸드 크루": { en: "Fast Food Crew", zh: "快餐店员工", es: "Empleado de comida rápida", ja: "ファーストフードクルー", fr: "Employé de restauration rapide", de: "Fast-Food-Mitarbeiter", pt: "Atendente de fast food", ru: "Сотрудник фастфуда", ar: "عامل مطعم وجبات سريعة", hi: "फास्ट फूड क्रू" },
+        "매장 캐셔": { en: "Store Cashier", zh: "收银员", es: "Cajero de tienda", ja: "レジ係", fr: "Caissier", de: "Kassierer", pt: "Caixa de loja", ru: "Кассир", ar: "أمين صندوق", hi: "स्टोर कैशियर" },
+        "배달/라이더": { en: "Delivery Rider", zh: "外卖骑手", es: "Repartidor", ja: "配達員/ライダー", fr: "Livreur", de: "Lieferfahrer", pt: "Entregador", ru: "Курьер", ar: "عامل توصيل", hi: "डिलीवरी राइडर" },
+        "주차/발렛": { en: "Parking/Valet", zh: "停车/代客泊车", es: "Aparcacoches", ja: "駐車場/バレーパーキング", fr: "Voiturier", de: "Parkservice/Valet", pt: "Manobrista", ru: "Парковщик", ar: "موقف سيارات / فاليه", hi: "पार्किंग/वैलेट" },
+        "청소/미화": { en: "Cleaning/Janitorial", zh: "保洁", es: "Limpieza", ja: "清掃/ビルメン", fr: "Nettoyage/Entretien", de: "Reinigung", pt: "Limpeza", ru: "Уборка", ar: "تنظيف", hi: "सफाई" },
+        "경비/보안": { en: "Security Guard", zh: "保安", es: "Guardia de seguridad", ja: "警備員", fr: "Agent de sécurité", de: "Sicherheitsdienst", pt: "Segurança", ru: "Охранник", ar: "حارس أمن", hi: "सुरक्षा गार्ड" },
+        "콜센터/고객센터": { en: "Call Center", zh: "呼叫中心", es: "Centro de llamadas", ja: "コールセンター", fr: "Centre d'appels", de: "Callcenter", pt: "Call Center", ru: "Колл-центр", ar: "مركز الاتصال", hi: "कॉल सेंटर" },
         "호텔리어": { en: "Hotelier", zh: "酒店员工", es: "Hotelero", ja: "ホテリエ", fr: "Hôtelier", de: "Hotelier", pt: "Hoteleiro", ru: "Отельер", ar: "موظف فندق", hi: "होटलकर्मी" },
         "가이드/투어컨덕터": { en: "Tour Guide", zh: "导游", es: "Guía Turístico", ja: "ツアーガイド", fr: "Guide Touristique", de: "Reiseführer", pt: "Guia Turístico", ru: "Гид", ar: "مرشد سياحي", hi: "टूर गाइड" },
         "승무원/조종사": { en: "Flight Attendant/Pilot", zh: "乘务员/飞行员", es: "Asistente de Vuelo/Piloto", ja: "CA/パイロット", fr: "Agent de Bord/Pilote", de: "Flugbegleiter/Pilot", pt: "Comissário/Piloto", ru: "Стюардесса/Пилот", ar: "مضيف طيران / طيار", hi: "फ्लाइट अटेंडेंट/पायलट" },
@@ -414,26 +423,26 @@ function getT(text, lang) {
 }
 
 const currencyMap = {
-    'cn': { code: 'CNY', rateToUsd: 0.14, workingPop: 741208193 },
-    'in': { code: 'INR', rateToUsd: 0.012, workingPop: 512392041 },
-    'us': { code: 'USD', rateToUsd: 1, workingPop: 162193485 },
-    'id': { code: 'IDR', rateToUsd: 0.000065, workingPop: 138402112 },
-    'br': { code: 'BRL', rateToUsd: 0.20, workingPop: 108301948 },
-    'ru': { code: 'RUB', rateToUsd: 0.011, workingPop: 74382109 },
-    'jp': { code: 'JPY', rateToUsd: 0.0067, workingPop: 68291003 },
-    'ng': { code: 'NGN', rateToUsd: 0.00065, workingPop: 61048291 },
-    'mx': { code: 'MXN', rateToUsd: 0.059, workingPop: 59203111 },
-    'de': { code: 'EUR', rateToUsd: 1.08, workingPop: 45392104 },
-    'pk': { code: 'PKR', rateToUsd: 0.0036, workingPop: 76402113 },
-    'vn': { code: 'VND', rateToUsd: 0.000040, workingPop: 56391029 },
-    'uk': { code: 'GBP', rateToUsd: 1.25, workingPop: 33204519 },
-    'bd': { code: 'BDT', rateToUsd: 0.0091, workingPop: 71402891 },
-    'ir': { code: 'IRR', rateToUsd: 0.000024, workingPop: 26491002 },
-    'tr': { code: 'TRY', rateToUsd: 0.031, workingPop: 32840119 },
-    'fr': { code: 'EUR', rateToUsd: 1.08, workingPop: 30192841 },
-    'kr': { code: 'KRW', rateToUsd: 0.00074, workingPop: 28481204 },
-    'ph': { code: 'PHP', rateToUsd: 0.018, workingPop: 45392011 },
-    'it': { code: 'EUR', rateToUsd: 1.08, workingPop: 25481002 }
+    'us': { code: 'USD', rateToUsd: 1, workingPop: 162193485, minHourly: 15.0, annualHours: 2080, weeklyHours: 40 },
+    'kr': { code: 'KRW', rateToUsd: 0.00074, workingPop: 28481204, minHourly: 10320, annualHours: 2508, weeklyHours: 48 },
+    'jp': { code: 'JPY', rateToUsd: 0.0067, workingPop: 68291003, minHourly: 1050, annualHours: 2080, weeklyHours: 40 },
+    'de': { code: 'EUR', rateToUsd: 1.08, workingPop: 45392104, minHourly: 13.0, annualHours: 2080, weeklyHours: 40 },
+    'fr': { code: 'EUR', rateToUsd: 1.08, workingPop: 30192841, minHourly: 12.0, annualHours: 1820, weeklyHours: 35 },
+    'uk': { code: 'GBP', rateToUsd: 1.25, workingPop: 33204519, minHourly: 12.0, annualHours: 2080, weeklyHours: 40 },
+    'it': { code: 'EUR', rateToUsd: 1.08, workingPop: 25481002, minHourly: 9.0, annualHours: 2080, weeklyHours: 40 },
+    'cn': { code: 'CNY', rateToUsd: 0.14, workingPop: 741208193, minHourly: 25.0, annualHours: 2080, weeklyHours: 40 },
+    'in': { code: 'INR', rateToUsd: 0.012, workingPop: 512392041, minHourly: 100.0, annualHours: 2080, weeklyHours: 40 },
+    'br': { code: 'BRL', rateToUsd: 0.20, workingPop: 108301948, minHourly: 8.5, annualHours: 2080, weeklyHours: 40 },
+    'mx': { code: 'MXN', rateToUsd: 0.059, workingPop: 59203111, minHourly: 35.0, annualHours: 2080, weeklyHours: 40 },
+    'vn': { code: 'VND', rateToUsd: 0.000040, workingPop: 56391029, minHourly: 22500, annualHours: 2080, weeklyHours: 40 },
+    'ph': { code: 'PHP', rateToUsd: 0.018, workingPop: 45392011, minHourly: 76.0, annualHours: 2080, weeklyHours: 40 },
+    'id': { code: 'IDR', rateToUsd: 0.000065, workingPop: 138402112, minHourly: 20000, annualHours: 2080, weeklyHours: 40 },
+    'ru': { code: 'RUB', rateToUsd: 0.011, workingPop: 74382109, minHourly: 150.0, annualHours: 2080, weeklyHours: 40 },
+    'ng': { code: 'NGN', rateToUsd: 0.00065, workingPop: 61048291, minHourly: 500.0, annualHours: 2080, weeklyHours: 40 },
+    'pk': { code: 'PKR', rateToUsd: 0.0036, workingPop: 76402113, minHourly: 200.0, annualHours: 2080, weeklyHours: 40 },
+    'bd': { code: 'BDT', rateToUsd: 0.0091, workingPop: 71402891, minHourly: 60.0, annualHours: 2080, weeklyHours: 40 },
+    'ir': { code: 'IRR', rateToUsd: 0.000024, workingPop: 26491002, minHourly: 150000, annualHours: 2080, weeklyHours: 40 },
+    'tr': { code: 'TRY', rateToUsd: 0.031, workingPop: 32840119, minHourly: 120.0, annualHours: 2080, weeklyHours: 40 }
 };
 
 // Hierarchical Occupation Data
@@ -496,9 +505,11 @@ const occupationData = {
         }
     },
     "service": {
-        name: "서비스 / 음식 / 숙박",
+        name: "서비스 / 음식 / 시설",
         med: {
-            "food": { name: "음식점 / 카페", small: { "chef": "셰프/조리사", "barista": "바리스타", "manager": "매니저/점장", "serve": "서빙/알바" } },
+            "food": { name: "음식점 / 카페", small: { "chef": "셰프/조리사", "barista": "바리스타", "manager": "매니저/점장", "serve": "서빙/알바", "fastfood": "패스트푸드 크루" } },
+            "store": { name: "매장 / 편의점 / PC방", small: { "convenience": "편의점 알바", "cashier": "매장 캐셔", "pcbang": "PC방/노래방 알바" } },
+            "facilities": { name: "시설 / 운송 / 경비", small: { "cleaning": "청소/미화", "security": "경비/보안", "parking": "주차/발렛", "delivery": "배달/라이더", "callcenter": "콜센터/고객센터" } },
             "hotel": { name: "숙박 / 여행", small: { "hotelier": "호텔리어", "guide": "가이드/투어컨덕터", "flight": "승무원/조종사" } },
             "beauty": { name: "미용 / 뷰티", small: { "hair": "헤어 디자이너", "makeup": "메이크업 아티스트", "fitness": "피트니스 트레이너" } }
         }
@@ -539,7 +550,7 @@ function updateStaticDropdowns(lang) {
     const cVal = cSel.value || 'kr';
     const jlVal = jlSel ? (jlSel.value || 'all') : 'all';
     const gVal = gSel.value || 'all';
-    const iVal = iSel.value || 'yearly';
+    const iVal = iSel.value || 'hourly';
 
     cSel.innerHTML = ''; if (jlSel) jlSel.innerHTML = ''; gSel.innerHTML = ''; iSel.innerHTML = '';
 
@@ -772,6 +783,22 @@ el('calculator-form').addEventListener('submit', function (e) {
     });
 });
 
+// Mathematical Functions for Log-Normal Percentile Approximation
+function normalCDF(z) {
+    const t = 1.0 / (1.0 + 0.2316419 * Math.abs(z));
+    const d = 0.3989422804014327 * Math.exp(-z * z / 2.0);
+    const p = d * t * (0.319381530 + t * (-0.356563782 + t * (1.781477937 + t * (-1.821255978 + t * 1.330274429))));
+    if (z > 0) return 1.0 - p;
+    return p;
+}
+
+function calculatePercentile(income, median, sigma) {
+    if (income <= 0) return 99.9999;
+    const z = (Math.log(income) - Math.log(median)) / sigma;
+    const pct = (1.0 - normalCDF(z)) * 100;
+    return Math.max(0.0001, Math.min(99.9999, pct)).toFixed(4);
+}
+
 // Calculate mock data based on input
 function showResults() {
     // Hide any old ad sections if they still exist
@@ -794,37 +821,127 @@ function showResults() {
     const incomeType = el('income-type').value;
 
     // Normalize to Yearly Local Currency
+    const countryData = currencyMap[country] || { rateToUsd: 1, minHourly: 0, annualHours: 2080 };
     let multiplier = 1;
-    if (incomeType === 'hourly') multiplier = 2080;
-    if (incomeType === 'weekly') multiplier = 52;
-    if (incomeType === 'monthly') multiplier = 12;
+    if (incomeType === 'hourly') {
+        multiplier = countryData.annualHours;
+    } else if (incomeType === 'weekly') {
+        multiplier = (country === 'kr') ? 52.2 : 52;
+    } else if (incomeType === 'monthly') {
+        multiplier = 12;
+    }
 
-    let localYearly = amount * multiplier;
+    let grossUpFactor = 1.0;
+    if (incomeType === 'hourly' || incomeType === 'weekly') {
+        grossUpFactor = 1 / 0.90; // 10% deduction
+    } else if (incomeType === 'monthly') {
+        grossUpFactor = 1 / 0.85; // 15% deduction
+    }
+
+    let localYearly = amount * multiplier * grossUpFactor;
 
     // Convert to USD using the currencyMap
     const rate = currencyMap[country] ? currencyMap[country].rateToUsd : 1;
     let baseYearlyUsd = localYearly * rate;
 
-    // Core logic: Calculate percentile based on normal distribution approximation
-    // Mean global income ~$10,000, SD ~$20,000
-    // Very simple heuristic to map income to percentile:
-    let baseRank = 100 - Math.min(99.9, (Math.log10(baseYearlyUsd || 1) / Math.log10(1000000)) * 100);
-    if (baseRank < 0.01) baseRank = 0.01;
-    if (isNaN(baseRank) || baseRank > 99) baseRank = 99.9;
+    // Core logic: Calculate percentile based on normal distribution approximation (Updated for 2025-2026 H1)
+    const inflation2026 = 1.085;
+    
+    const majorKey = el('occupation-large') ? el('occupation-large').value : 'all';
+    
+    let baseGlobalMedianUsd = 14000 * inflation2026;
+    const professionalKeys = ['it', 'finance', 'medical', 'engineering', 'business', 'public'];
+    if (professionalKeys.includes(majorKey)) {
+        baseGlobalMedianUsd = 32000 * inflation2026; // Skew global median for white-collar professionals
+    }
+    const baseUsMedianUsd = 55000 * inflation2026;
+
+    let countryMultiplier = 1.0;
+    if (country === 'us') countryMultiplier = 1.0;
+    else if (country === 'kr') countryMultiplier = 0.65;
+    else if (country === 'jp') countryMultiplier = 0.60;
+    else if (country === 'de' || country === 'fr' || country === 'uk' || country === 'it') countryMultiplier = 0.85;
+    else if (country === 'cn') countryMultiplier = 0.25;
+    else if (country === 'in') countryMultiplier = 0.08;
+    else if (country === 'br' || country === 'mx') countryMultiplier = 0.15;
+    else countryMultiplier = 0.3;
+
+    const localMedianUsd = baseUsMedianUsd * countryMultiplier;
 
     const jobLevel = el('job-level') ? el('job-level').value : 'all';
+    let jobSigmaAdj = 0.0;
+    let jobLevelMedianMult = 1.0;
+    if (jobLevel === 'entry') { jobLevelMedianMult = 0.7; }
+    else if (jobLevel === 'mid') { jobLevelMedianMult = 1.0; }
+    else if (jobLevel === 'senior') { jobLevelMedianMult = 1.4; }
+    else if (jobLevel === 'exec') { jobLevelMedianMult = 2.0; jobSigmaAdj = 0.2; }
 
-    // Job Level Modifier for Same Job comparisons
-    let jobModifier = 1.0;
-    if (jobLevel === 'entry') jobModifier = 0.7; // Entry level: making same amount is comparatively higher rank
-    else if (jobLevel === 'mid') jobModifier = 0.9;
-    else if (jobLevel === 'senior') jobModifier = 1.2;
-    else if (jobLevel === 'exec') jobModifier = 1.5;
+    const gender = el('gender') ? el('gender').value : 'all';
+    let genderMult = 1.0;
+    if (gender === 'male') genderMult = 1.15;
+    else if (gender === 'female') genderMult = 0.85;
 
-    const localJob = Math.max(0.01, Math.min(99.9, (baseRank * 0.8 * jobModifier))).toFixed(2);
-    const globalJob = Math.max(0.01, Math.min(99.9, (baseRank * 0.4 * jobModifier))).toFixed(2);
-    const localAll = Math.max(0.01, Math.min(99.9, baseRank)).toFixed(2);
-    const globalAll = Math.max(0.01, Math.min(99.9, (baseRank * 0.5))).toFixed(2);
+    const globalSigma = 1.5;
+    const localSigma = 0.6 + jobSigmaAdj;
+    const jobSigma = 0.5 + jobSigmaAdj;
+
+    const globalAllMedian = baseGlobalMedianUsd * genderMult;
+    const localAllMedian = localMedianUsd * genderMult;
+
+    const jobKey = el('occupation-small') ? el('occupation-small').value : 'all';
+    let specificJobMult = 1.0;
+    const lowWageJobs = ['convenience', 'pcbang', 'serving', 'fastfood', 'cleaning', 'cashier', 'parking', 'cinema', 'bakery', 'serve'];
+    const midLowWageJobs = ['security', 'delivery', 'callcenter', 'hair', 'fitness', 'barista', 'clerk', 'admin'];
+    const highWageJobs = ['doctor', 'dentist', 'physician', 'judge', 'lawyer', 'pilot', 'exec', 'ceo', 'flight'];
+    
+    if (lowWageJobs.includes(jobKey)) {
+        specificJobMult = 0.45;
+    } else if (midLowWageJobs.includes(jobKey)) {
+        specificJobMult = 0.65;
+    } else if (highWageJobs.includes(jobKey)) {
+        specificJobMult = 1.8;
+    } else {
+        const majorMultMap = {
+            'medical': 1.8,
+            'finance': 1.6,
+            'engineering': 1.5,
+            'it': 1.4,
+            'business': 1.2,
+            'education': 1.2,
+            'sales': 1.1,
+            'public': 1.1,
+            'arts': 0.9,
+            'service': 0.7,
+            'other': 0.8,
+            'all': 1.0
+        };
+        specificJobMult = majorMultMap[majorKey] || 1.0;
+    }
+
+    let localJobMedian = localAllMedian * specificJobMult * jobLevelMedianMult;
+    let globalJobMedian = globalAllMedian * specificJobMult * jobLevelMedianMult;
+
+    // Enforce country-specific minimum wage floor
+    const currentCountryData = currencyMap[country] || { rateToUsd: 1, minHourly: 0, annualHours: 2080 };
+    if (currentCountryData.minHourly > 0) {
+        const minWageAnnualUsd = currentCountryData.minHourly * currentCountryData.annualHours * currentCountryData.rateToUsd;
+        if (localJobMedian < minWageAnnualUsd) {
+            localJobMedian = minWageAnnualUsd * (jobLevel === 'entry' ? 1.0 : (jobLevel === 'mid' ? 1.05 : 1.1));
+        }
+    }
+
+    const localJob = calculatePercentile(baseYearlyUsd, localJobMedian, jobSigma);
+    const globalJob = calculatePercentile(baseYearlyUsd, globalJobMedian, globalSigma);
+    const localAll = calculatePercentile(baseYearlyUsd, localAllMedian, localSigma);
+    const globalAll = calculatePercentile(baseYearlyUsd, globalAllMedian, globalSigma);
+
+    // Save medians to window for text injection
+    window.currentMedians = {
+        'val-local-job': localJobMedian,
+        'val-global-job': globalJobMedian,
+        'val-local-all': localAllMedian,
+        'val-global-all': globalAllMedian
+    };
 
     el('val-local-job').dataset.target = localJob;
     el('val-global-job').dataset.target = globalJob;
@@ -867,14 +984,14 @@ function animateChart(barId, valId, labelId, targetPercent) {
         let currentNum = startNum - ((startNum - endNum) * easeProgress);
         let currentHeight = targetHeight * easeProgress;
 
-        if (valEl) valEl.innerText = currentNum.toFixed(2);
+        if (valEl) valEl.innerText = currentNum.toFixed(4);
         if (barEl) barEl.style.height = currentHeight + '%';
         if (labelEl) labelEl.style.bottom = currentHeight + '%';
 
         if (progress < 1) {
             requestAnimationFrame(step);
         } else {
-            if (valEl) valEl.innerText = endNum.toFixed(2);
+            if (valEl) valEl.innerText = endNum.toFixed(4);
             if (barEl) barEl.style.height = targetHeight + '%';
             if (labelEl) labelEl.style.bottom = targetHeight + '%';
         }
@@ -901,7 +1018,7 @@ function updateAnalysisTexts(lang) {
     const t = translations[lang] || translations['en'];
 
     // Demographic calculations
-    const globalPop = 3481248157;
+    const globalPop = 1280000000; // Top 30 OECD + Emerging Internet user base
     const countryKey = el('country').value;
     const localPop = currencyMap[countryKey] && currencyMap[countryKey].workingPop ? currencyMap[countryKey].workingPop : 28481204;
     const jobKey = el('occupation-small').value;
@@ -947,6 +1064,41 @@ function updateAnalysisTexts(lang) {
             .replace('{total}', totalPop.toLocaleString())
             .replace('{rankNum}', `<span class="text-blue">${rankNum.toLocaleString()}</span>`);
 
+        const countryKey = el('country').value;
+        const currentCountryData = currencyMap[countryKey] || { rateToUsd: 1, minHourly: 0, annualHours: 2080 };
+        const rate = currentCountryData.rateToUsd;
+        const incomeType = el('income-type').value;
+        let multiplier = 1;
+        let grossUpFactor = 1.0;
+        if (incomeType === 'hourly') {
+            multiplier = currentCountryData.annualHours;
+            grossUpFactor = 1 / 0.90;
+        } else if (incomeType === 'weekly') {
+            multiplier = (countryKey === 'kr') ? 52.2 : 52;
+            grossUpFactor = 1 / 0.90;
+        } else if (incomeType === 'monthly') {
+            multiplier = 12;
+            grossUpFactor = 1 / 0.85;
+        }
+
+        const medianUsd = window.currentMedians ? window.currentMedians[valId] : 0;
+        if (medianUsd > 0) {
+            const localY = medianUsd / rate;
+            const localAmt = (localY / multiplier) / grossUpFactor;
+            const currencySym = currencyMap[countryKey] ? (countryKey === 'kr' ? '원' : (countryKey === 'us' ? '$' : currencyMap[countryKey].code)) : '';
+            const typeSelect = el('income-type');
+            const typeStr = typeSelect.options[typeSelect.selectedIndex].text;
+
+            const locAmtStr = Math.round(localAmt).toLocaleString();
+            let medianStr = "";
+            if (lang === 'ko') {
+                medianStr = `[평균 ${typeStr}: ${locAmtStr}${currencySym}] `;
+            } else {
+                medianStr = `[Avg ${typeStr}: ${locAmtStr} ${currencySym}] `;
+            }
+            finalHtml = `<span style="display:block; margin-bottom:6px; font-weight:bold; color:var(--gold); font-size: 1.05rem;"><i class="fa-solid fa-coins"></i> ${medianStr}</span>` + finalHtml;
+        }
+
         // Add some glowing effect or color variations based on rank
         if (rank <= 20) {
             finalHtml = `<span class="text-gold" style="font-size:1.1rem; text-shadow: 0 0 5px rgba(255,215,0,0.5);"></span>` + finalHtml;
@@ -981,7 +1133,7 @@ function resetForm() {
     // Reset bar heights and labels
     ['local-job', 'global-job', 'local-all', 'global-all'].forEach(key => {
         el(`bar-${key}`).style.height = '0%';
-        el(`val-${key}`).innerText = '100';
+        el(`val-${key}`).innerText = '100.0000';
         if (el(`label-${key}`)) {
             el(`label-${key}`).classList.remove('active');
             el(`label-${key}`).style.bottom = '0%';
@@ -1043,8 +1195,11 @@ async function shareResult() {
                 url: shareUrl,
             };
 
-            // If browser supports sharing files (mobile mostly)
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+            // If browser supports sharing files AND is mobile, use native share
+            // Desktop Chrome often crashes with RESULT_CODE_KILLED_BAD_MESSAGE if we try to share large blobs.
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile && navigator.canShare && navigator.canShare({ files: [file] })) {
                 shareData.files = [file];
                 try {
                     await navigator.share(shareData);
@@ -1057,21 +1212,21 @@ async function shareResult() {
                 const modal = document.getElementById('image-modal');
                 const preview = document.getElementById('fallback-image-preview');
                 const urlInput = document.getElementById('fallback-share-url');
-                
+
                 preview.src = url;
                 urlInput.value = shareData.url;
-                
+
                 // Show the modal
                 modal.classList.remove('ad-hidden');
                 modal.classList.remove('hidden');
                 modal.classList.add('active');
                 modal.style.display = 'flex';
-                
+
                 // Try copying URL to clipboard
                 try {
                     navigator.clipboard.writeText(shareData.url);
                     urlInput.value = "(복사완료!) " + shareData.url;
-                } catch(e) {}
+                } catch (e) { }
             }
         }, 'image/png');
 
