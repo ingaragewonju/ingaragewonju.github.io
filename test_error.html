@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head><meta charset='UTF-8'></head>
+<body style='background:#222; color:#fff; font-family:sans-serif; padding:20px;'>
+    <h2>JavaScript Error Check</h2>
+    <div id='error-output' style='color: #ff5555; font-size: 20px; font-weight: bold; background: #333; padding: 20px; border-radius: 8px;'>
+        검사 중...
+    </div>
+    <script>
+        window.onerror = function(message, source, lineno, colno, error) {
+            document.getElementById('error-output').innerHTML = 
+                '⚠️ 문법 에러 발견!<br><br>' + 
+                '메시지: ' + message + '<br>' +
+                '줄 번호: ' + lineno + '<br>' +
+                '칸 번호: ' + colno;
+            return true;
+        };
+    </script>
+    <script src='app.js?v=test2'></script>
+    <script>
+        if (typeof translations !== 'undefined') {
+            document.getElementById('error-output').innerHTML = '✅ 문법 에러가 없습니다!';
+            document.getElementById('error-output').style.color = '#55ff55';
+        }
+    </script>
+</body>
+</html>
