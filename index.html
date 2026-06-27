@@ -36,20 +36,28 @@
         <i class="fa-brands fa-ethereum floating-icon icon-5"></i>
     </div>
 
-    <!-- 5-Second Interstitial Ad Overlay -->
+    <!-- 5-Second Loading Screen with Ad -->
     <div id="ad-overlay" class="ad-hidden">
-        <div class="ad-content">
-            <div class="ad-header">
-                <span class="ad-badge">ADVERTISEMENT</span>
-                <span class="ad-timer" id="ad-timer">5</span>
+        <div class="loading-content" style="background: var(--glass-bg); padding: 40px 20px; border-radius: 16px; text-align: center; max-width: 90vw; width: 400px; border: 1px solid rgba(255, 215, 0, 0.2); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);">
+            <div class="loading-header" style="margin-bottom: 20px;">
+                <h2 style="color: var(--text-primary); font-size: 1.2rem; margin-bottom: 10px;">
+                    <i class="fa-solid fa-spinner fa-spin gold-text" style="margin-right: 8px;"></i>
+                    <span id="ad-title">Sponsor Message</span>
+                </h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary);">결과 확인까지 <span class="ad-timer gold-text" id="ad-timer" style="font-weight: bold; font-size: 1.3rem;">5</span>초</p>
             </div>
-            <div class="ad-main">
-                <h2 id="ad-title">Sponsor Message</h2>
-                <p id="ad-network-name" class="ad-network-text">Provided by Global Ad Network</p>
-                <div class="ad-banner-placeholder" style="padding:0; overflow:hidden;">
-                    <img id="ad-banner-image" src="assets/sample_ad_watch.png" alt="Advertisement"
-                        style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">
-                </div>
+            
+            <div class="ad-slot" style="margin-top: 30px; min-height: 250px; background: rgba(0,0,0,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <!-- 실제 구글 애드센스 디스플레이 광고 단위 삽입 -->
+                <ins class="adsbygoogle"
+                     style="display:block; width: 100%; height: 250px;"
+                     data-ad-client="ca-pub-8659205422441932"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </div>
@@ -72,6 +80,9 @@
                     <option value="ru">Русский (Russian)</option>
                     <option value="pt">Português (Portuguese)</option>
                     <option value="de">Deutsch (German)</option>
+                    <option value="th">ภาษาไทย (Thai)</option>
+                    <option value="vi">Tiếng Việt (Vietnamese)</option>
+                    <option value="id">Bahasa Indonesia</option>
                 </select>
             </div>
         </header>
@@ -243,6 +254,13 @@
                 </li>
             </ul>
         </section>
+
+        <!-- Footer for AdSense Compliance -->
+        <footer style="text-align: center; padding: 30px 20px; color: #888; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px;">
+            <p style="margin-bottom: 5px;">© 2026 RankWealth. All rights reserved.</p>
+            <p style="margin-bottom: 5px;">Contact: contact@rankwealth.com</p>
+            <p><a href="privacy.html" style="color: #888; text-decoration: underline; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">Privacy Policy (개인정보처리방침)</a></p>
+        </footer>
     </div>
 
     <!-- Image Fallback Modal for Sharing -->

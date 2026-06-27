@@ -254,7 +254,17 @@ const uiData = {
         { val: 'fr', txt: { ko: '프랑스 (France)', en: 'France', zh: '法国' } },
         { val: 'kr', txt: { ko: '대한민국 (South Korea)', en: 'South Korea', zh: '韩国' } },
         { val: 'ph', txt: { ko: '필리핀 (Philippines)', en: 'Philippines', zh: '菲律宾' } },
-        { val: 'it', txt: { ko: '이탈리아 (Italy)', en: 'Italy', zh: '意大利' } }
+        { val: 'it', txt: { ko: '이탈리아 (Italy)', en: 'Italy', zh: '意大利' } },
+        { val: 'ca', txt: { ko: '캐나다 (Canada)', en: 'Canada', zh: '加拿大' } },
+        { val: 'au', txt: { ko: '호주 (Australia)', en: 'Australia', zh: '澳大利亚' } },
+        { val: 'sg', txt: { ko: '싱가포르 (Singapore)', en: 'Singapore', zh: '新加坡' } },
+        { val: 'tw', txt: { ko: '대만 (Taiwan)', en: 'Taiwan', zh: '台湾' } },
+        { val: 'es', txt: { ko: '스페인 (Spain)', en: 'Spain', zh: '西班牙' } },
+        { val: 'ar', txt: { ko: '아르헨티나 (Argentina)', en: 'Argentina', zh: '阿根廷' } },
+        { val: 'za', txt: { ko: '남아프리카 공화국 (South Africa)', en: 'South Africa', zh: '南非' } },
+        { val: 'ae', txt: { ko: '아랍에미리트 (UAE)', en: 'United Arab Emirates', zh: '阿联酋' } },
+        { val: 'sa', txt: { ko: '사우디아라비아 (Saudi Arabia)', en: 'Saudi Arabia', zh: '沙特阿拉伯' } },
+        { val: 'th', txt: { ko: '태국 (Thailand)', en: 'Thailand', zh: '泰国' } }
     ]
 };
 
@@ -275,6 +285,7 @@ function getT(text, lang) {
         "기타": { en: "Other", zh: "其他", es: "Otros", fr: "Autre", ru: "Другое", de: "Andere", pt: "Outro", ja: "その他" },
 
         // Med
+        "경영 / 지원": { en: "Management / Support", zh: "管理 / 支持", es: "Gestión / Soporte", ja: "経営 / 支援", fr: "Gestion / Support", de: "Management / Support", pt: "Gestão / Suporte", ru: "Управление / Поддержка", ar: "إدارة / دعم", hi: "प्रबंधन / समर्थन" },
         "소프트웨어 개발": { en: "Software Dev", zh: "软件开发", es: "Desarrollo de Software", ja: "ソフトウェア開発", fr: "Dév. de logiciels", de: "Softwareentwicklung", pt: "Desenv. de Software", ru: "Разработка ПО", ar: "تطوير البرمجيات", hi: "सॉफ्टवेयर विकास" },
         "데이터 / AI": { en: "Data / AI", zh: "数据 / AI", es: "Datos / IA", ja: "データ / AI", fr: "Données / IA", de: "Daten / KI", pt: "Dados / IA", ru: "Данные / ИИ", ar: "البيانات / الذكاء الاصطناعي", hi: "डेटा / एआई" },
         "인프라 / 보안": { en: "Infra / Security", zh: "基础设施 / 安全", es: "Infraestructura / Seguridad", ja: "インフラ / セキュリティ", fr: "Infra / Sécurité", de: "Infrastruktur / Sicherheit", pt: "Infra / Segurança", ru: "Инфраструктура / Безопасность", ar: "البنية التحتية / الأمن", hi: "इन्फ्रा / सुरक्षा" },
@@ -353,10 +364,16 @@ function getT(text, lang) {
         "보험설계사": { en: "Insurance Agent", zh: "保险代理", es: "Agente de Seguros", ja: "保険外交員", fr: "Agent d'Assurance", de: "Versicherungsvertreter", pt: "Agente de Seguros", ru: "Страховой агент", ar: "وكيل تأمين", hi: "बीमा एजेंट" },
         "언더라이터": { en: "Underwriter", zh: "核保员", es: "Suscriptor", ja: "アンダーライター", fr: "Souscripteur", de: "Versicherungsmathematiker", pt: "Subscritor", ru: "Андеррайтер", ar: "مكتتب تأمين", hi: "अंडरराइटर" },
         "계리사": { en: "Actuary", zh: "精算师", es: "Actuario", ja: "アクチュアリー", fr: "Actuaire", de: "Aktuar", pt: "Atuário", ru: "Актуарий", ar: "خبير اكتواري", hi: "एक्चुअरी" },
-        "일반의": { en: "General Practitioner", zh: "全科医生", es: "Médico General", ja: "一般医", fr: "Médecin Généraliste", de: "Allgemeinmediziner", pt: "Clínico Geral", ru: "Врач общей практики", ar: "طبيب عام", hi: "सामान्य चिकित्सक" },
-        "전문의": { en: "Specialist", zh: "专科医生", es: "Especialista", ja: "専門医", fr: "Spécialiste", de: "Facharzt", pt: "Especialista", ru: "Специалист", ar: "أخصائي", hi: "विशेषज्ञ" },
-        "치과의사": { en: "Dentist", zh: "牙医", es: "Dentista", ja: "歯科医", fr: "Dentiste", de: "Zahnarzt", pt: "Dentista", ru: "Дантист", ar: "طبيب أسنان", hi: "दंत चिकित्सक" },
-        "한의사": { en: "Oriental Med Doctor", zh: "中医师", es: "Médico Oriental", ja: "漢方医", fr: "Médecin Oriental", de: "Arzt für orientalische Medizin", pt: "Médico Oriental", ru: "Врач восточной медицины", ar: "طبيب طب شرقي", hi: "प्राच्य चिकित्सा चिकित्सक" },
+        "개원의(일반의)": { en: "Clinic Owner (GP)", zh: "诊所老板(全科)", es: "Dueño de Clínica (General)", ja: "開業医(一般)", fr: "Propriétaire de Clinique (Généraliste)", de: "Klinikbesitzer (Allgemeinmediziner)", pt: "Dono de Clínica (Clínico Geral)", ru: "Владелец клиники (Врач общей практики)", ar: "صاحب عيادة (طبيب عام)", hi: "क्लिनिक मालिक (सामान्य चिकित्सक)" },
+        "개원의(전문의)": { en: "Clinic Owner (Specialist)", zh: "诊所老板(专科)", es: "Dueño de Clínica (Especialista)", ja: "開業医(専門)", fr: "Propriétaire de Clinique (Spécialiste)", de: "Klinikbesitzer (Facharzt)", pt: "Dono de Clínica (Especialista)", ru: "Владелец клиники (Специалист)", ar: "صاحب عيادة (أخصائي)", hi: "क्लिनिक मालिक (विशेषज्ञ)" },
+        "개원의(치과의사)": { en: "Clinic Owner (Dentist)", zh: "诊所老板(牙医)", es: "Dueño de Clínica (Dentista)", ja: "開業医(歯科)", fr: "Propriétaire de Clinique (Dentiste)", de: "Klinikbesitzer (Zahnarzt)", pt: "Dono de Clínica (Dentista)", ru: "Владелец клиники (Дантист)", ar: "صاحب عيادة (طبيب أسنان)", hi: "क्लिनिक मालिक (दंत चिकित्सक)" },
+        "개원의(한의사)": { en: "Clinic Owner (Oriental Med)", zh: "诊所老板(中医师)", es: "Dueño de Clínica (Med Oriental)", ja: "開業医(漢方)", fr: "Propriétaire de Clinique (Médecine Orientale)", de: "Klinikbesitzer (Arzt für orientalische Medizin)", pt: "Dono de Clínica (Médico Oriental)", ru: "Владелец клиники (Врач восточной медицины)", ar: "صاحب عيادة (طبيب طب شرقي)", hi: "क्लिनिक मालिक (प्राच्य चिकित्सा चिकित्सक)" },
+        "페이닥터(일반의)": { en: "Pay Doctor (GP)", zh: "受雇医生(全科)", es: "Médico Empleado (General)", ja: "勤務医(一般)", fr: "Médecin Salarié (Généraliste)", de: "Angestellter Arzt (Allgemeinmediziner)", pt: "Médico Empregado (Clínico Geral)", ru: "Наемный врач (Врач общей практики)", ar: "طبيب موظف (طبيب عام)", hi: "वेतनभोगी डॉक्टर (सामान्य चिकित्सक)" },
+        "페이닥터(전문의)": { en: "Pay Doctor (Specialist)", zh: "受雇医生(专科)", es: "Médico Empleado (Especialista)", ja: "勤務医(専門)", fr: "Médecin Salarié (Spécialiste)", de: "Angestellter Arzt (Facharzt)", pt: "Médico Empregado (Especialista)", ru: "Наемный врач (Специалист)", ar: "طبيب موظف (أخصائي)", hi: "वेतनभोगी डॉक्टर (विशेषज्ञ)" },
+        "페이닥터(치과의사)": { en: "Pay Doctor (Dentist)", zh: "受雇牙医", es: "Dentista Empleado", ja: "勤務医(歯科)", fr: "Dentiste Salarié", de: "Angestellter Zahnarzt", pt: "Dentista Empregado", ru: "Наемный дантист", ar: "طبيب أسنان موظف", hi: "वेतनभोगी दंत चिकित्सक" },
+        "페이닥터(한의사)": { en: "Pay Doctor (Oriental Med)", zh: "受雇中医师", es: "Médico Empleado (Oriental)", ja: "勤務医(漢方)", fr: "Médecin Salarié (Médecine Orientale)", de: "Angestellter Arzt (Arzt für orientalische Medizin)", pt: "Médico Empregado (Médico Oriental)", ru: "Наемный врач (Врач восточной медицины)", ar: "طبيب موظف (طبيب طب شرقي)", hi: "वेतनभोगी डॉक्टर (प्राच्य चिकित्सा चिकित्सक)" },
+        "개국약사": { en: "Pharmacy Owner", zh: "药店老板", es: "Dueño de Farmacia", ja: "開局薬剤師", fr: "Propriétaire de Pharmacie", de: "Apothekenbesitzer", pt: "Dono de Farmácia", ru: "Владелец аптеки", ar: "صاحب صيدلية", hi: "फार्मेसी मालिक" },
+        "페이약사": { en: "Employed Pharmacist", zh: "受雇药剂师", es: "Farmacéutico Empleado", ja: "勤務薬剤師", fr: "Pharmacien Salarié", de: "Angestellter Apotheker", pt: "Farmacêutico Empregado", ru: "Наемный фармацевт", ar: "صيدلي موظف", hi: "वेतनभोगी फार्मासिस्ट" },
         "간호사": { en: "Nurse", zh: "护士", es: "Enfermera", ja: "看護師", fr: "Infirmière", de: "Krankenschwester", pt: "Enfermeiro", ru: "Медсестра", ar: "ممرض", hi: "नर्स" },
         "간호조무사": { en: "Nursing Asst", zh: "护士助理", es: "Asistente de Enfermería", ja: "看護助手", fr: "Aide-soignant", de: "Pflegehelfer", pt: "Assistente de Enfermagem", ru: "Помощник медсестры", ar: "مساعد تمريض", hi: "नर्सिंग सहायक" },
         "약사": { en: "Pharmacist", zh: "药剂师", es: "Farmacéutico", ja: "薬剤師", fr: "Pharmacien", de: "Apotheker", pt: "Farmacêutico", ru: "Фармацевт", ar: "صيدلي", hi: "फार्मासिस्ट" },
@@ -373,8 +390,10 @@ function getT(text, lang) {
         "이공계 연구원": { en: "STEM Researcher", zh: "理工科研究员", es: "Investigador STEM", ja: "理系研究員", fr: "Chercheur STEM", de: "STEM-Forscher", pt: "Pesquisador STEM", ru: "Исследователь STEM", ar: "باحث علمي", hi: "स्टेम शोधकर्ता" },
         "인문/사회 연구원": { en: "Humanities Researcher", zh: "人文社会研究员", es: "Investigador de Humanidades", ja: "文系研究員", fr: "Chercheur en Sciences Humaines", de: "Geisteswissenschaftlicher Forscher", pt: "Pesquisador de Humanidades", ru: "Исследователь гуманитарных наук", ar: "باحث علوم إنسانية", hi: "मानविकी शोधकर्ता" },
         "건축가/설계": { en: "Architect/Design", zh: "建筑师", es: "Arquitecto/Diseñador", ja: "建築家/設計", fr: "Architecte/Designer", de: "Architekt/Designer", pt: "Arquiteto/Designer", ru: "Архитектор/Дизайнер", ar: "مهندس معماري", hi: "वास्तुकार/डिज़ाइनर" },
+        "건축 엔지니어": { en: "Architectural Engineer", zh: "建筑工程师", es: "Ingeniero Arquitectónico", ja: "建築エンジニア", fr: "Ingénieur en Architecture", de: "Architekturingenieur", pt: "Engenheiro Arquitetônico", ru: "Инженер-архитектор", ar: "مهندس معماري", hi: "वास्तुशिल्प इंजीनियर" },
         "토목 엔지니어": { en: "Civil Engineer", zh: "土木工程师", es: "Ingeniero Civil", ja: "土木エンジニア", fr: "Ingénieur Civil", de: "Bauingenieur", pt: "Engenheiro Civil", ru: "Инженер-строитель", ar: "مهندس مدني", hi: "सिविल इंजीनियर" },
-        "현장 소장/관리": { en: "Site Manager", zh: "现场主管", es: "Gerente de Sitio", ja: "現場監督", fr: "Chef de Chantier", de: "Bauleiter", pt: "Gerente de Obra", ru: "Менеджер на площадке", ar: "مدير موقع", hi: "साइट प्रबंधक" },
+        "현장소장": { en: "Site Manager", zh: "现场主管", es: "Gerente de Sitio", ja: "現場所長", fr: "Chef de Chantier", de: "Bauleiter", pt: "Gerente de Obra", ru: "Начальник участка", ar: "مدير موقع", hi: "साइट प्रबंधक" },
+        "관리": { en: "Management", zh: "管理", es: "Gestión", ja: "管理", fr: "Gestion", de: "Management", pt: "Gestão", ru: "Управление", ar: "إدارة", hi: "प्रबंधन" },
         "플랜트 엔지니어": { en: "Plant Engineer", zh: "工厂工程师", es: "Ingeniero de Planta", ja: "プラントエンジニア", fr: "Ingénieur d'Usine", de: "Anlageningenieur", pt: "Engenheiro de Instalações", ru: "Инженер завода", ar: "مهندس مصنع", hi: "प्लांट इंजीनियर" },
         "품질 관리(QA/QC)": { en: "QA/QC", zh: "质量控制", es: "Control de Calidad (QA/QC)", ja: "品質管理(QA/QC)", fr: "Contrôle Qualité", de: "Qualitätskontrolle", pt: "Controle de Qualidade", ru: "Контроль качества", ar: "مراقبة الجودة", hi: "गुणवत्ता नियंत्रण" },
         "생산기술 엔지니어": { en: "Production Eng", zh: "生产工程师", es: "Ingeniero de Producción", ja: "生産技術エンジニア", fr: "Ingénieur de Production", de: "Produktionsingenieur", pt: "Engenheiro de Produção", ru: "Инженер-технолог", ar: "مهندس إنتاج", hi: "उत्पादन इंजीनियर" },
@@ -412,8 +431,10 @@ function getT(text, lang) {
         "경찰/소방/교정": { en: "Police/Fire/Corrections", zh: "警察/消防", es: "Policía/Bomberos", ja: "警察/消防", fr: "Police/Pompiers", de: "Polizei/Feuerwehr", pt: "Polícia/Bombeiros", ru: "Полиция/Пожарные", ar: "شرطة / إطفاء", hi: "पुलिस/अग्निशमन" },
         "직업 군인": { en: "Military Officer", zh: "军人", es: "Militar", ja: "職業軍人", fr: "Militaire", de: "Militäroffizier", pt: "Militar", ru: "Военный", ar: "ضابط عسكري", hi: "सैन्य अधिकारी" },
         "판사/검사": { en: "Judge/Prosecutor", zh: "法官/检察官", es: "Juez/Fiscal", ja: "裁判官/検事", fr: "Juge/Procureur", de: "Richter/Staatsanwalt", pt: "Juiz/Promotor", ru: "Судья/Прокурор", ar: "قاضٍ / مدعٍ عام", hi: "न्यायाधीश/अभियोजक" },
-        "변호사": { en: "Lawyer", zh: "律师", es: "Abogado", ja: "弁護士", fr: "Avocat", de: "Anwalt", pt: "Advogado", ru: "Адвокат", ar: "محامٍ", hi: "वकील" },
-        "법무사/노무사": { en: "Paralegal/Labor Atty", zh: "律师助理", es: "Paralegal", ja: "司法書士/労務士", fr: "Parajuriste", de: "Paralegal", pt: "Paralegal", ru: "Паралегал", ar: "مساعد قانوني", hi: "पैरालीगल" },
+        "개업/파트너(변호사)": { en: "Lawyer (Partner)", zh: "律师(合伙人)", es: "Abogado (Socio)", ja: "弁護士(パートナー)", fr: "Avocat (Associé)", de: "Anwalt (Partner)", pt: "Advogado (Sócio)", ru: "Адвокат (Партнер)", ar: "محامٍ (شريك)", hi: "वकील (भागीदार)" },
+        "고용/소속(변호사)": { en: "Lawyer (Associate)", zh: "律师(受雇)", es: "Abogado (Asociado)", ja: "弁護士(アソシエイト)", fr: "Avocat (Salarié)", de: "Anwalt (Angestellt)", pt: "Advogado (Associado)", ru: "Адвокат (Наемный)", ar: "محامٍ (موظف)", hi: "वकील (सहयोगी)" },
+        "개업(법무사/노무사)": { en: "Paralegal/Labor Atty (Owner)", zh: "律师助理(老板)", es: "Paralegal (Dueño)", ja: "司法書士/労務士(開業)", fr: "Parajuriste (Propriétaire)", de: "Paralegal (Inhaber)", pt: "Paralegal (Dono)", ru: "Паралегал (Владелец)", ar: "مساعد قانوني (صاحب عمل)", hi: "पैरालीगल (मालिक)" },
+        "고용/소속(법무사/노무사)": { en: "Paralegal/Labor Atty (Employed)", zh: "律师助理(受雇)", es: "Paralegal (Empleado)", ja: "司法書士/労務士(雇用)", fr: "Parajuriste (Salarié)", de: "Paralegal (Angestellt)", pt: "Paralegal (Empregado)", ru: "Паралегал (Наемный)", ar: "مساعد قانوني (موظف)", hi: "पैरालीगल (कर्मचारी)" },
         "자유소득자": { en: "Freelancer", zh: "自由职业者", es: "Trabajador Autónomo", ja: "フリーランサー", fr: "Indépendant", de: "Freiberufler", pt: "Freelancer", ru: "Фрилансер", ar: "مستقل", hi: "फ्रीलांसर" },
         "자영업/소상공인": { en: "Small Biz Owner", zh: "小企业主", es: "Propietario de Pequeña Empresa", ja: "自営業/小規模事業者", fr: "Propriétaire de Petite Entreprise", de: "Kleinunternehmer", pt: "Proprietário de Pequena Empresa", ru: "Владелец малого бизнеса", ar: "صاحب عمل صغير", hi: "छोटा व्यवसाय स्वामी" }
     };
@@ -442,7 +463,99 @@ const currencyMap = {
     'pk': { code: 'PKR', rateToUsd: 0.0036, workingPop: 76402113, minHourly: 200.0, annualHours: 2080, weeklyHours: 40 },
     'bd': { code: 'BDT', rateToUsd: 0.0091, workingPop: 71402891, minHourly: 60.0, annualHours: 2080, weeklyHours: 40 },
     'ir': { code: 'IRR', rateToUsd: 0.000024, workingPop: 26491002, minHourly: 150000, annualHours: 2080, weeklyHours: 40 },
-    'tr': { code: 'TRY', rateToUsd: 0.031, workingPop: 32840119, minHourly: 120.0, annualHours: 2080, weeklyHours: 40 }
+    'tr': { code: 'TRY', rateToUsd: 0.031, workingPop: 32840119, minHourly: 120.0, annualHours: 2080, weeklyHours: 40 },
+    'ca': { code: 'CAD', rateToUsd: 0.74, workingPop: 20000000, minHourly: 16.65, annualHours: 2080, weeklyHours: 40 },
+    'au': { code: 'AUD', rateToUsd: 0.65, workingPop: 14000000, minHourly: 23.23, annualHours: 1976, weeklyHours: 38 },
+    'sg': { code: 'SGD', rateToUsd: 0.74, workingPop: 3800000, minHourly: 0, annualHours: 2288, weeklyHours: 44 },
+    'tw': { code: 'TWD', rateToUsd: 0.031, workingPop: 11500000, minHourly: 183, annualHours: 2080, weeklyHours: 40 },
+    'es': { code: 'EUR', rateToUsd: 1.08, workingPop: 21000000, minHourly: 8.45, annualHours: 2080, weeklyHours: 40 },
+    'ar': { code: 'ARS', rateToUsd: 0.0012, workingPop: 20000000, minHourly: 1500, annualHours: 2080, weeklyHours: 40 },
+    'za': { code: 'ZAR', rateToUsd: 0.053, workingPop: 16000000, minHourly: 27.58, annualHours: 2340, weeklyHours: 45 },
+    'ae': { code: 'AED', rateToUsd: 0.27, workingPop: 7000000, minHourly: 0, annualHours: 2496, weeklyHours: 48 },
+    'sa': { code: 'SAR', rateToUsd: 0.27, workingPop: 15000000, minHourly: 0, annualHours: 2496, weeklyHours: 48 },
+    'th': { code: 'THB', rateToUsd: 0.028, workingPop: 39000000, minHourly: 350, annualHours: 2496, weeklyHours: 48 },
+    'my': { code: 'MYR', rateToUsd: 0.21, workingPop: 16000000, minHourly: 7.21, annualHours: 2496, weeklyHours: 48 },
+    'nz': { code: 'NZD', rateToUsd: 0.61, workingPop: 2900000, minHourly: 23.15, annualHours: 2080, weeklyHours: 40 },
+    'hk': { code: 'HKD', rateToUsd: 0.13, workingPop: 3800000, minHourly: 40.0, annualHours: 2080, weeklyHours: 40 },
+    'nl': { code: 'EUR', rateToUsd: 1.08, workingPop: 9800000, minHourly: 13.27, annualHours: 2080, weeklyHours: 40 },
+    'se': { code: 'SEK', rateToUsd: 0.095, workingPop: 5600000, minHourly: 0, annualHours: 2080, weeklyHours: 40 },
+    'ch': { code: 'CHF', rateToUsd: 1.13, workingPop: 5100000, minHourly: 24.0, annualHours: 2080, weeklyHours: 40 },
+    'pl': { code: 'PLN', rateToUsd: 0.25, workingPop: 17000000, minHourly: 27.70, annualHours: 2080, weeklyHours: 40 },
+    'be': { code: 'EUR', rateToUsd: 1.08, workingPop: 5100000, minHourly: 11.85, annualHours: 1976, weeklyHours: 38 },
+    'at': { code: 'EUR', rateToUsd: 1.08, workingPop: 4400000, minHourly: 0, annualHours: 2080, weeklyHours: 40 },
+    'dk': { code: 'DKK', rateToUsd: 0.14, workingPop: 3000000, minHourly: 0, annualHours: 1924, weeklyHours: 37 },
+    'fi': { code: 'EUR', rateToUsd: 1.08, workingPop: 2700000, minHourly: 0, annualHours: 2080, weeklyHours: 40 },
+    'no': { code: 'NOK', rateToUsd: 0.094, workingPop: 2900000, minHourly: 0, annualHours: 1950, weeklyHours: 37.5 },
+    'il': { code: 'ILS', rateToUsd: 0.27, workingPop: 4300000, minHourly: 32.30, annualHours: 2184, weeklyHours: 42 },
+    'pe': { code: 'PEN', rateToUsd: 0.27, workingPop: 18000000, minHourly: 1025, annualHours: 2496, weeklyHours: 48 },
+    'co': { code: 'COP', rateToUsd: 0.00026, workingPop: 22000000, minHourly: 5416, annualHours: 2444, weeklyHours: 47 },
+    'cl': { code: 'CLP', rateToUsd: 0.0011, workingPop: 9500000, minHourly: 2500, annualHours: 2288, weeklyHours: 44 },
+    'eg': { code: 'EGP', rateToUsd: 0.032, workingPop: 31000000, minHourly: 35.0, annualHours: 2496, weeklyHours: 48 },
+    've': { code: 'VES', rateToUsd: 0.027, workingPop: 14000000, minHourly: 0.8, annualHours: 2080, weeklyHours: 40 },
+    'gr': { code: 'EUR', rateToUsd: 1.08, workingPop: 4200000, minHourly: 4.5, annualHours: 2080, weeklyHours: 40 },
+    'pt': { code: 'EUR', rateToUsd: 1.08, workingPop: 5300000, minHourly: 4.7, annualHours: 2080, weeklyHours: 40 },
+    'ca': { code: 'CAD', rateToUsd: 0.74, workingPop: 20000000, minHourly: 16.65, annualHours: 2080, weeklyHours: 40 },
+    'au': { code: 'AUD', rateToUsd: 0.65, workingPop: 14000000, minHourly: 23.23, annualHours: 1976, weeklyHours: 38 },
+    'sg': { code: 'SGD', rateToUsd: 0.74, workingPop: 3800000, minHourly: 0, annualHours: 2288, weeklyHours: 44 },
+    'tw': { code: 'TWD', rateToUsd: 0.031, workingPop: 11500000, minHourly: 183, annualHours: 2080, weeklyHours: 40 },
+    'es': { code: 'EUR', rateToUsd: 1.08, workingPop: 21000000, minHourly: 8.45, annualHours: 2080, weeklyHours: 40 },
+    'ar': { code: 'ARS', rateToUsd: 0.0012, workingPop: 20000000, minHourly: 1500, annualHours: 2080, weeklyHours: 40 },
+    'za': { code: 'ZAR', rateToUsd: 0.053, workingPop: 16000000, minHourly: 27.58, annualHours: 2340, weeklyHours: 45 },
+    'ae': { code: 'AED', rateToUsd: 0.27, workingPop: 7000000, minHourly: 0, annualHours: 2496, weeklyHours: 48 },
+    'sa': { code: 'SAR', rateToUsd: 0.27, workingPop: 15000000, minHourly: 0, annualHours: 2496, weeklyHours: 48 },
+    'th': { code: 'THB', rateToUsd: 0.028, workingPop: 39000000, minHourly: 350, annualHours: 2496, weeklyHours: 48 },
+    'my': { code: 'MYR', rateToUsd: 0.21, workingPop: 16000000, minHourly: 7.21, annualHours: 2496, weeklyHours: 48 },
+    'nz': { code: 'NZD', rateToUsd: 0.61, workingPop: 2900000, minHourly: 23.15, annualHours: 2080, weeklyHours: 40 },
+    'hk': { code: 'HKD', rateToUsd: 0.13, workingPop: 3800000, minHourly: 40.0, annualHours: 2080, weeklyHours: 40 },
+    'nl': { code: 'EUR', rateToUsd: 1.08, workingPop: 9800000, minHourly: 13.27, annualHours: 2080, weeklyHours: 40 },
+    'se': { code: 'SEK', rateToUsd: 0.095, workingPop: 5600000, minHourly: 0, annualHours: 2080, weeklyHours: 40 },
+    'pt': { code: 'EUR', rateToUsd: 1.08, workingPop: 5300000, minHourly: 4.7, annualHours: 2080, weeklyHours: 40 }
+};
+
+const jobMedianUsdMap = {
+    'it_frontend': 71500, 'it_backend': 81250, 'it_fullstack': 84500, 'it_mobile': 78000, 'it_game': 68250,
+    'it_data_eng': 87750, 'it_data_sci': 84500, 'it_ai': 97500, 'it_dba': 68250,
+    'it_cloud': 87750, 'it_network': 61750, 'it_security': 78000,
+    'it_pm': 81250, 'it_uiux': 61750, 'it_webpub': 45500,
+    'it_admin': 36000, 'it_accounting': 52000,
+    'business_ceo': 162500, 'business_strategy': 74750, 'business_bizdev': 68250,
+    'business_admin': 35750, 'business_hr': 52000, 'business_legal': 81250,
+    'business_accounting': 52000, 'business_tax': 55250, 'business_auditor': 58500,
+    'sales_digital': 52000, 'sales_brand': 61750, 'sales_pr': 48750, 'sales_copywriter': 42250,
+    'sales_b2b': 58500, 'sales_b2c': 42250, 'sales_overseas': 61750, 'sales_techsales': 71500,
+    'sales_merchandiser': 48750, 'sales_logistics': 52000, 'sales_trade': 48750,
+    'sales_admin': 32000, 'sales_accounting': 45000,
+    'finance_teller': 26000, 'finance_loan': 45500, 'finance_pb': 74750,
+    'finance_analyst': 65000, 'finance_trader': 81250, 'finance_fund': 91000, 'finance_ib': 97500,
+    'finance_agent': 42250, 'finance_underwriter': 52000, 'finance_actuary': 78000,
+    'finance_admin': 38000, 'finance_accounting': 55000,
+    'medical_general': 149500, 'medical_specialist': 227500, 'medical_dentist': 123500, 'medical_oriental': 65000,
+    'medical_pay_general': 110000, 'medical_pay_specialist': 180000, 'medical_pay_dentist': 120000, 'medical_pay_oriental': 85000,
+    'medical_rn': 55250, 'medical_na': 26000, 'medical_pharmacist': 87750, 'medical_pay_pharmacist': 65000, 'medical_therapist': 61750,
+    'medical_socialworker': 35750, 'medical_caregiver': 22750, 'medical_counselor': 42250,
+    'medical_admin': 33000, 'medical_accounting': 46000,
+    'education_elem': 42250, 'education_univ': 61750, 'education_admin': 39000,
+    'education_instructor': 32500, 'education_tutor': 29250, 'education_manager': 39000,
+    'education_science': 61750, 'education_humanities': 48750,
+    'education_support_admin': 30000, 'education_support_accounting': 42000,
+    'engineering_arch': 58500, 'engineering_architectural': 62400, 'engineering_civil': 64675, 'engineering_site_manager': 68900, 'engineering_management': 48750,
+    'engineering_plant': 68250, 'engineering_quality': 48750, 'engineering_rndt': 55250,
+    'engineering_mech': 61750, 'engineering_elec': 68250,
+    'engineering_admin': 35000, 'engineering_accounting': 50000,
+    'service_chef': 39000, 'service_barista': 20800, 'service_manager': 35750, 'service_serve': 20800, 'service_fastfood': 19500,
+    'service_convenience': 19500, 'service_cashier': 20800, 'service_pcbang': 19500,
+    'service_cleaning': 22750, 'service_security': 27300, 'service_parking': 22750, 'service_delivery': 29250, 'service_callcenter': 26000,
+    'service_hotelier': 32500, 'service_guide': 31200, 'service_flight': 58500,
+    'service_hair': 32500, 'service_makeup': 32500, 'service_fitness': 39000,
+    'service_admin': 30000, 'service_accounting': 42000,
+    'arts_pd': 58500, 'arts_writer': 45500, 'arts_reporter': 45500,
+    'arts_actor': 42250, 'arts_singer': 42250, 'arts_creator': 45500,
+    'arts_graphic': 42250, 'arts_fashion': 52000, 'arts_artist': 39000,
+    'arts_admin': 31000, 'arts_accounting': 44000,
+    'public_admin': 45500, 'public_police': 48750, 'public_military': 52000,
+    'public_judge': 97500, 'public_lawyer_partner': 130000, 'public_lawyer_assoc': 91000, 'public_paralegal_partner': 65000, 'public_paralegal_assoc': 42250,
+    'public_support_admin': 34000, 'public_support_accounting': 48000,
+    'other_freelance': 39000, 'other_biz': 48750, 'other_other_small': 39000
 };
 
 // Hierarchical Occupation Data
@@ -453,7 +566,8 @@ const occupationData = {
             "dev": { name: "소프트웨어 개발", small: { "frontend": "프론트엔드 개발자", "backend": "백엔드 개발자", "fullstack": "풀스택 개발자", "mobile": "모바일 앱 개발자", "game": "게임 개발자" } },
             "data": { name: "데이터 / AI", small: { "data_eng": "데이터 엔지니어", "data_sci": "데이터 사이언티스트", "ai": "인공지능/머신러닝 연구원", "dba": "데이터베이스 관리자" } },
             "infra": { name: "인프라 / 보안", small: { "cloud": "클라우드 엔지니어", "network": "네트워크/서버 엔지니어", "security": "정보보안 전문가" } },
-            "pm": { name: "기획 / 디자인", small: { "pm": "프로덕트 매니저(PM)", "uiux": "UI/UX 디자이너", "webpub": "웹 퍼블리셔" } }
+            "pm": { name: "기획 / 디자인", small: { "pm": "프로덕트 매니저(PM)", "uiux": "UI/UX 디자이너", "webpub": "웹 퍼블리셔" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "business": {
@@ -469,7 +583,8 @@ const occupationData = {
         med: {
             "marketing": { name: "마케팅 / 광고", small: { "digital": "디지털/퍼포먼스 마케터", "brand": "브랜드 매니저", "pr": "PR/홍보담당", "copywriter": "카피라이터" } },
             "sales": { name: "영업", small: { "b2b": "B2B 영업", "b2c": "B2C 영업", "overseas": "해외 영업", "techsales": "기술 영업" } },
-            "retail": { name: "유통 / 무역", small: { "merchandiser": "MD(상품기획)", "logistics": "물류/공급망 관리", "trade": "무역/수출입" } }
+            "retail": { name: "유통 / 무역", small: { "merchandiser": "MD(상품기획)", "logistics": "물류/공급망 관리", "trade": "무역/수출입" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "finance": {
@@ -477,15 +592,17 @@ const occupationData = {
         med: {
             "banking": { name: "은행", small: { "teller": "창구 업무", "loan": "여신/심사", "pb": "프라이빗 뱅커(PB)" } },
             "investment": { name: "투자 / 증권", small: { "analyst": "애널리스트", "trader": "트레이더", "fund": "펀드매니저", "ib": "IB/기업금융" } },
-            "insurance": { name: "보험", small: { "agent": "보험설계사", "underwriter": "언더라이터", "actuary": "계리사" } }
+            "insurance": { name: "보험", small: { "agent": "보험설계사", "underwriter": "언더라이터", "actuary": "계리사" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "medical": {
         name: "의료 / 보건 / 복지",
         med: {
-            "doctor": { name: "의사 / 치과의사", small: { "general": "일반의", "specialist": "전문의", "dentist": "치과의사", "oriental": "한의사" } },
-            "nurse": { name: "간호 / 보건", small: { "rn": "간호사", "na": "간호조무사", "pharmacist": "약사", "therapist": "물리/작업치료사" } },
-            "welfare": { name: "복지 / 요양", small: { "socialworker": "사회복지사", "caregiver": "요양보호사", "counselor": "심리상담사" } }
+            "doctor": { name: "의사 / 치과의사", small: { "general": "개원의(일반의)", "specialist": "개원의(전문의)", "dentist": "개원의(치과의사)", "oriental": "개원의(한의사)", "pay_general": "페이닥터(일반의)", "pay_specialist": "페이닥터(전문의)", "pay_dentist": "페이닥터(치과의사)", "pay_oriental": "페이닥터(한의사)" } },
+            "nurse": { name: "간호 / 보건", small: { "rn": "간호사", "na": "간호조무사", "pharmacist": "개국약사", "pay_pharmacist": "페이약사", "therapist": "물리/작업치료사" } },
+            "welfare": { name: "복지 / 요양", small: { "socialworker": "사회복지사", "caregiver": "요양보호사", "counselor": "심리상담사" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "education": {
@@ -493,15 +610,17 @@ const occupationData = {
         med: {
             "school": { name: "학교", small: { "elem": "초/중/고 교사", "univ": "대학교수", "admin": "교직원/행정" } },
             "academy": { name: "학원 / 과외", small: { "instructor": "학원 강사", "tutor": "개인 과외", "manager": "학원 원장/매니저" } },
-            "research": { name: "연구원", small: { "science": "이공계 연구원", "humanities": "인문/사회 연구원" } }
+            "research": { name: "연구원", small: { "science": "이공계 연구원", "humanities": "인문/사회 연구원" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "engineering": {
         name: "엔지니어링 / 건설",
         med: {
-            "construction": { name: "건설 / 토목", small: { "arch": "건축가/설계", "civil": "토목 엔지니어", "site": "현장 소장/관리" } },
+            "construction": { name: "건설 / 토목", small: { "arch": "건축가/설계", "architectural": "건축 엔지니어", "civil": "토목 엔지니어", "site_manager": "현장소장", "management": "관리" } },
             "manufacturing": { name: "제조 / 생산", small: { "plant": "플랜트 엔지니어", "quality": "품질 관리(QA/QC)", "rndt": "생산기술 엔지니어" } },
-            "mechanic": { name: "기계 / 전자", small: { "mech": "기계 엔지니어", "elec": "전기/전자 엔지니어" } }
+            "mechanic": { name: "기계 / 전자", small: { "mech": "기계 엔지니어", "elec": "전기/전자 엔지니어" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "service": {
@@ -511,7 +630,8 @@ const occupationData = {
             "store": { name: "매장 / 편의점 / PC방", small: { "convenience": "편의점 알바", "cashier": "매장 캐셔", "pcbang": "PC방/노래방 알바" } },
             "facilities": { name: "시설 / 운송 / 경비", small: { "cleaning": "청소/미화", "security": "경비/보안", "parking": "주차/발렛", "delivery": "배달/라이더", "callcenter": "콜센터/고객센터" } },
             "hotel": { name: "숙박 / 여행", small: { "hotelier": "호텔리어", "guide": "가이드/투어컨덕터", "flight": "승무원/조종사" } },
-            "beauty": { name: "미용 / 뷰티", small: { "hair": "헤어 디자이너", "makeup": "메이크업 아티스트", "fitness": "피트니스 트레이너" } }
+            "beauty": { name: "미용 / 뷰티", small: { "hair": "헤어 디자이너", "makeup": "메이크업 아티스트", "fitness": "피트니스 트레이너" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "arts": {
@@ -519,14 +639,16 @@ const occupationData = {
         med: {
             "media": { name: "방송 / 미디어", small: { "pd": "PD/감독", "writer": "작가", "reporter": "기자/아나운서" } },
             "entertainment": { name: "엔터테인먼트", small: { "actor": "배우/모델", "singer": "가수/뮤지션", "creator": "유튜버/크리에이터" } },
-            "design": { name: "디자인 / 예술", small: { "graphic": "그래픽/시각 디자이너", "fashion": "패션 디자이너", "artist": "순수 미술가" } }
+            "design": { name: "디자인 / 예술", small: { "graphic": "그래픽/시각 디자이너", "fashion": "패션 디자이너", "artist": "순수 미술가" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "public": {
         name: "공공 / 법률 / 군인",
         med: {
             "public": { name: "공무원", small: { "admin": "행정직 공무원", "police": "경찰/소방/교정", "military": "직업 군인" } },
-            "law": { name: "법률", small: { "judge": "판사/검사", "lawyer": "변호사", "paralegal": "법무사/노무사" } }
+            "law": { name: "법률", small: { "judge": "판사/검사", "lawyer_partner": "개업/파트너(변호사)", "lawyer_assoc": "고용/소속(변호사)", "paralegal_partner": "개업(법무사/노무사)", "paralegal_assoc": "고용/소속(법무사/노무사)" } },
+            "support": { name: "경영 / 지원", small: { "admin": "총무/사무보조", "accounting": "재무/회계담당" } }
         }
     },
     "other": {
@@ -591,33 +713,7 @@ const AdManager = {
         this.onComplete = callback;
         const adData = this.networks[lang] || this.networks['default'];
 
-        const placeholder = document.querySelector('.ad-banner-placeholder');
-
-        if (lang === 'ko') {
-            // 실제 한국 광고사(쿠팡 파트너스 / 카카오 애드핏) 테스트 코드
-            // 참고: 실제 수익을 창출하려면 본인의 고유 ID(trackingCode, data-ad-unit)를 발급받아 입력해야 합니다.
-            placeholder.innerHTML = `
-                <div style="width:100%; height:100%; display:flex; flex-direction:column; justify-content:center; align-items:center; background:#1a1a1a; border-radius:12px; position:relative;">
-                    <div style="position:absolute; top:10px; left:10px; background:#fbe54d; color:#000; padding:2px 8px; border-radius:4px; font-size:0.7rem; font-weight:bold;">Kakao AdFit (테스트)</div>
-                    <!-- 카카오 애드핏 실전 적용 스크립트 예시 -->
-                    <ins class="kakao_ad_area" style="display:none;" 
-                        data-ad-unit="DAN-xxxxxxxxxxxx" 
-                        data-ad-width="320" 
-                        data-ad-height="250"></ins> 
-                    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-                    
-                    <p style="color:#aaa; font-size:0.9rem; margin-top:30px; text-align:center; padding: 0 10px;">
-                        실제 광고 노출 영역입니다.<br>
-                        <span style="color:#fbe54d; font-size:0.8rem;">(본인의 광고 매체 ID 등록 시 실제 수익형 배너가 송출됩니다)</span>
-                    </p>
-                </div>
-            `;
-        } else {
-            // Pick a random sample ad for global
-            const adImages = ['assets/sample_ad_watch.png', 'assets/sample_ad_car.png'];
-            const randomAd = adImages[Math.floor(Math.random() * adImages.length)];
-            placeholder.innerHTML = `<img id="ad-banner-image" src="${randomAd}" alt="Advertisement" style="width:100%; height:100%; object-fit:cover; border-radius: 12px;">`;
-        }
+        // Ad banner injection removed to use the static AdSense code in index.html
 
         el('ad-overlay').classList.remove('ad-hidden');
 
@@ -849,12 +945,12 @@ function showResults() {
     
     const majorKey = el('occupation-large') ? el('occupation-large').value : 'all';
     
-    let baseGlobalMedianUsd = 14000 * inflation2026;
+    let baseGlobalMedianUsd = 7000 * inflation2026;
     const professionalKeys = ['it', 'finance', 'medical', 'engineering', 'business', 'public'];
     if (professionalKeys.includes(majorKey)) {
-        baseGlobalMedianUsd = 32000 * inflation2026; // Skew global median for white-collar professionals
+        baseGlobalMedianUsd = 16000 * inflation2026; // Skew global median for white-collar professionals
     }
-    const baseUsMedianUsd = 55000 * inflation2026;
+    const baseUsMedianUsd = 27500 * inflation2026;
 
     let countryMultiplier = 1.0;
     if (country === 'us') countryMultiplier = 1.0;
@@ -885,41 +981,70 @@ function showResults() {
     const localSigma = 0.6 + jobSigmaAdj;
     const jobSigma = 0.5 + jobSigmaAdj;
 
-    const globalAllMedian = baseGlobalMedianUsd * genderMult;
-    const localAllMedian = localMedianUsd * genderMult;
+    const globalAllMedian = baseGlobalMedianUsd * genderMult * jobLevelMedianMult;
+    const localAllMedian = localMedianUsd * genderMult * jobLevelMedianMult;
 
     const jobKey = el('occupation-small') ? el('occupation-small').value : 'all';
-    let specificJobMult = 1.0;
-    const lowWageJobs = ['convenience', 'pcbang', 'serving', 'fastfood', 'cleaning', 'cashier', 'parking', 'cinema', 'bakery', 'serve'];
-    const midLowWageJobs = ['security', 'delivery', 'callcenter', 'hair', 'fitness', 'barista', 'clerk', 'admin'];
-    const highWageJobs = ['doctor', 'dentist', 'physician', 'judge', 'lawyer', 'pilot', 'exec', 'ceo', 'flight'];
-    
-    if (lowWageJobs.includes(jobKey)) {
-        specificJobMult = 0.45;
-    } else if (midLowWageJobs.includes(jobKey)) {
-        specificJobMult = 0.65;
-    } else if (highWageJobs.includes(jobKey)) {
-        specificJobMult = 1.8;
-    } else {
-        const majorMultMap = {
-            'medical': 1.8,
-            'finance': 1.6,
-            'engineering': 1.5,
-            'it': 1.4,
-            'business': 1.2,
-            'education': 1.2,
-            'sales': 1.1,
-            'public': 1.1,
-            'arts': 0.9,
-            'service': 0.7,
-            'other': 0.8,
-            'all': 1.0
-        };
-        specificJobMult = majorMultMap[majorKey] || 1.0;
+    const jobMedianUsdMap = {
+        'it_frontend': 55000, 'it_backend': 62500, 'it_fullstack': 65000, 'it_mobile': 60000, 'it_game': 52500,
+        'it_data_eng': 67500, 'it_data_sci': 65000, 'it_ai': 75000, 'it_dba': 52500,
+        'it_cloud': 67500, 'it_network': 47500, 'it_security': 60000,
+        'it_pm': 62500, 'it_uiux': 47500, 'it_webpub': 35000,
+        'it_admin': 26000, 'it_accounting': 39000,
+        'business_ceo': 125000, 'business_strategy': 57500, 'business_bizdev': 52500,
+        'business_admin': 27500, 'business_hr': 40000, 'business_legal': 62500,
+        'business_accounting': 40000, 'business_tax': 42500, 'business_auditor': 45000,
+        'sales_digital': 40000, 'sales_brand': 47500, 'sales_pr': 37500, 'sales_copywriter': 32500,
+        'sales_b2b': 45000, 'sales_b2c': 32500, 'sales_overseas': 47500, 'sales_techsales': 55000,
+        'sales_merchandiser': 37500, 'sales_logistics': 40000, 'sales_trade': 37500,
+        'sales_admin': 25000, 'sales_accounting': 35000,
+        'finance_teller': 20000, 'finance_loan': 35000, 'finance_pb': 57500,
+        'finance_analyst': 50000, 'finance_trader': 62500, 'finance_fund': 70000, 'finance_ib': 75000,
+        'finance_agent': 32500, 'finance_underwriter': 40000, 'finance_actuary': 60000,
+        'finance_admin': 30000, 'finance_accounting': 45000,
+        'medical_general': 115000, 'medical_specialist': 175000, 'medical_dentist': 95000, 'medical_oriental': 50000,
+        'medical_pay_general': 85000, 'medical_pay_specialist': 140000, 'medical_pay_dentist': 90000, 'medical_pay_oriental': 65000,
+        'medical_rn': 42500, 'medical_na': 20000, 'medical_pharmacist': 67500, 'medical_pay_pharmacist': 50000, 'medical_therapist': 47500,
+        'medical_socialworker': 27500, 'medical_caregiver': 17500, 'medical_counselor': 32500,
+        'medical_admin': 26000, 'medical_accounting': 35000,
+        'education_elem': 32500, 'education_univ': 47500, 'education_admin': 30000,
+        'education_instructor': 25000, 'education_tutor': 22500, 'education_manager': 30000,
+        'education_science': 47500, 'education_humanities': 37500,
+        'education_support_admin': 25000, 'education_support_accounting': 32000,
+        'engineering_arch': 45000, 'engineering_architectural': 48000, 'engineering_civil': 49750, 'engineering_site_manager': 53000, 'engineering_management': 37500,
+        'engineering_plant': 52500, 'engineering_quality': 37500, 'engineering_rndt': 42500,
+        'engineering_mech': 47500, 'engineering_elec': 52500,
+        'engineering_admin': 28000, 'engineering_accounting': 38000,
+        'service_chef': 30000, 'service_barista': 16000, 'service_manager': 27500, 'service_serve': 16000, 'service_fastfood': 15000,
+        'service_convenience': 15000, 'service_cashier': 16000, 'service_pcbang': 15000,
+        'service_cleaning': 17500, 'service_security': 21000, 'service_parking': 17500, 'service_delivery': 22500, 'service_callcenter': 20000,
+        'service_hotelier': 25000, 'service_guide': 24000, 'service_flight': 45000,
+        'service_hair': 25000, 'service_makeup': 25000, 'service_fitness': 30000,
+        'service_admin': 24000, 'service_accounting': 32000,
+        'arts_pd': 45000, 'arts_writer': 35000, 'arts_reporter': 35000,
+        'arts_actor': 32500, 'arts_singer': 32500, 'arts_creator': 35000,
+        'arts_graphic': 32500, 'arts_fashion': 40000, 'arts_artist': 30000,
+        'arts_admin': 24000, 'arts_accounting': 33000,
+        'public_admin': 35000, 'public_police': 37500, 'public_military': 40000,
+        'public_judge': 75000, 'public_lawyer_partner': 100000, 'public_lawyer_assoc': 70000, 'public_paralegal_partner': 50000, 'public_paralegal_assoc': 32500,
+        'public_support_admin': 26000, 'public_support_accounting': 36000,
+        'other_freelance': 30000, 'other_biz': 37500, 'other_other_small': 30000
+    };
+
+    const compositeKey = majorKey + '_' + jobKey;
+    let baseJobUsd = jobMedianUsdMap[compositeKey] || baseUsMedianUsd;
+
+    // Apply wage compression algorithm for non-US countries to normalize extreme US professional wages
+    if (country !== 'us') {
+        const wageRatio = baseJobUsd / baseUsMedianUsd;
+        // Compress the ratio to 50% distance from the median to reflect global wage structures realistically
+        const compressedRatio = 1 + (wageRatio - 1) * 0.5;
+        baseJobUsd = baseUsMedianUsd * compressedRatio;
     }
 
-    let localJobMedian = localAllMedian * specificJobMult * jobLevelMedianMult;
-    let globalJobMedian = globalAllMedian * specificJobMult * jobLevelMedianMult;
+    // Actual local & global job median based on data-driven base median
+    let localJobMedian = baseJobUsd * countryMultiplier * jobLevelMedianMult * genderMult;
+    let globalJobMedian = (baseJobUsd * 0.40) * jobLevelMedianMult * genderMult;
 
     // Enforce country-specific minimum wage floor
     const currentCountryData = currencyMap[country] || { rateToUsd: 1, minHourly: 0, annualHours: 2080 };
@@ -1139,6 +1264,9 @@ function resetForm() {
             el(`label-${key}`).style.bottom = '0%';
         }
     });
+
+    // Scroll to top automatically
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 el('country').addEventListener('change', updateCurrencyLabel);
